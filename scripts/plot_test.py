@@ -19,7 +19,7 @@ def main():
         peak = np.maximum.accumulate(np.r_[1., nav])[1:]
         axes[0].plot(d.date, nav, label=label, color=color, lw=1.7)
         axes[1].plot(d.date, nav / peak - 1, color=color, lw=1.3)
-    axes[0].set_title('2024–2025 fixed-model test | primary 474 securities', loc='left', fontsize=14)
+    axes[0].set_title('Quantitative Equity Trading Strategy | 2024–2025 Test', loc='left', fontsize=14)
     axes[0].set_ylabel('NAV / initial capital')
     axes[0].legend(frameon=False)
     axes[1].set_ylabel('Drawdown')

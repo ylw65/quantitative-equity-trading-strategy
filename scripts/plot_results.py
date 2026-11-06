@@ -28,7 +28,7 @@ def main():
         for a in ax[:, col]:
             a.grid(alpha=.18)
             a.tick_params(axis='x', rotation=20)
-    fig.suptitle('Volume reversal with ML entry filtering | 60% core / 40% active', x=.07, ha='left', fontsize=14)
+    fig.suptitle('Quantitative Equity Trading Strategy | Volume Reversal & ML Filtering', x=.07, ha='left', fontsize=14)
     fig.text(.07, .015, '20 bps per side. Simulated adjusted-close execution. 2023 is not an independent test.', fontsize=9, color='#555555')
     fig.tight_layout(rect=[0, .04, 1, .94])
     target = ROOT / 'docs/figures'

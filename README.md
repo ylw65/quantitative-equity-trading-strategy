@@ -1,4 +1,6 @@
-# US Equity Volume-Reversal Research
+# Quantitative Equity Trading Strategy
+
+**Volume Reversal & ML Filtering**
 
 To everyone who opens this file: thank you for your time and interest in my
 work. This is my second quantitative strategy, which I developed independently.

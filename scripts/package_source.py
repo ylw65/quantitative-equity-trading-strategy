@@ -30,7 +30,7 @@ def main():
     target.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as archive:
         for name in sorted(names):
-            archive.write(ROOT / name, f'{ROOT.name}/{name}')
+            archive.write(ROOT / name, f'quantitative-equity-trading-strategy/{name}')
     digest = hashlib.sha256(target.read_bytes()).hexdigest()
     target.with_suffix(target.suffix + '.sha256').write_text(
         f'{digest}  {target.name}\n', encoding='utf-8')
