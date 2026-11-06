@@ -1,0 +1,26 @@
+\section{Final Research Dataset}
+
+The final panel contains \FinalSecurities{} securities,
+\FinalIssuers{} distinct SEC issuers, and \FinalObservations{} validated
+stock-day observations. Security-date keys are unique, the final
+\texttt{pct\_return} field is null throughout, and all retained prices and
+volumes are unchanged from the source records.
+
+Exclusions carry the original raw source-file path and policy reference in
+\path{historical_exclusions.csv}. The final master identifies whether each
+security uses the default 2016--2025 history or a historical eligibility
+boundary. No observations are imputed, interpolated, forward-filled, clipped,
+or winsorized.
+
+\begin{table}[tbp]
+\centering
+\caption{Final observations by calendar year}
+\label{tab:final-years}
+\small
+\GeneratedTable{table_final_years}
+\end{table}
+
+The shortened FERG and DKNG histories now begin at their policy dates rather
+than carrying a missing or inferred observation immediately before those dates.
+Their first retained rows have null diagnostic returns because a return across
+the removed boundary is intentionally not calculated.

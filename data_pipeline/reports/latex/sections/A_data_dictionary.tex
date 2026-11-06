@@ -1,0 +1,33 @@
+\section{Data Dictionary}
+
+\begin{longtable}{@{}p{0.25\linewidth}p{0.20\linewidth}p{0.47\linewidth}@{}}
+\caption{Core research and audit fields.}\label{tab:data_dictionary}\\
+\toprule
+Field & Type & Definition \\
+\midrule
+\endfirsthead
+\toprule
+Field & Type & Definition \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\texttt{date} & date & US equity trading date. \\
+\texttt{security\_id} & string & Persistent identifier, preferably SEC CIK based. \\
+\texttt{ticker} & string & Reference-date or acquisition symbol, retained as a time-varying label. \\
+\texttt{open} & float & Raw vendor opening price. \\
+\texttt{high} & float & Raw vendor high price. \\
+\texttt{low} & float & Raw vendor low price. \\
+\texttt{close} & float & Vendor nominal closing price. Yahoo back-adjusts its historical nominal close across splits; adjusted close additionally incorporates distributions. \\
+\texttt{adj\_close} & float & Vendor dividend- and split-adjusted closing price. \\
+\texttt{volume} & numeric & Reported share volume in the vendor convention. \\
+\texttt{dividends} & float & Cash dividend recorded on the observation date. \\
+\texttt{stock\_splits} & float & Stock split factor recorded on the observation date. \\
+\texttt{pct\_return} & float & Reserved research field; null in this acquisition phase. \\
+\texttt{quality flags} & Boolean fields & Separate diagnostic and issue-register fields; never automatic deletion rules. \\
+\texttt{source\_confidence} & string & Security-master evidence class for reference-date eligibility. \\
+\end{longtable}
+
+Raw fields preserve vendor semantics. Adjusted close is not reconstructed by
+overwriting the unadjusted close. Diagnostic returns are maintained separately
+from the research-facing base.

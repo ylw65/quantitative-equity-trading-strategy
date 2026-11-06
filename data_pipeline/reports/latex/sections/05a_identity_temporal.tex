@@ -1,0 +1,46 @@
+\section{Security Identity and Temporal Coverage Verification}
+
+\textbf{Observed.} Every successful Yahoo checkpoint was compared with the
+security master using the security identifier, reference-date ticker, Yahoo
+ticker, provider, and date key. Of \YahooSuccess{} successful histories,
+\IdentityValid{} passed all identity and schema tests; \IdentityInvalid{} were
+quarantined. No duplicate checkpoint dates or exact cross-security
+price--volume histories were found. \PlaceholderCheckpoints{} checkpoints
+contained date grids with all-NaN price placeholders; their \PlaceholderRows{}
+placeholder rows remain in the raw audit archive and are excluded from the
+research base.
+
+\textbf{Observed.} The apparent equality between \YahooSuccess{} successful
+histories and \YahooSuccess{} securities observed in 2025 is not a
+cumulative-count artifact. Every
+successful security has at least one positive-volume row in 2025. The temporal
+table separates positive-price history, positive-volume trading records, and
+activity near year-end:
+
+\IfFileExists{generated/table_identity_temporal.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Temporal coverage by year under positive-price, positive-volume,
+    and year-end activity definitions.}
+    \label{tab:identity_temporal}
+    \small
+    \resizebox{\linewidth}{!}{\input{generated/table_identity_temporal.tex}}
+  \end{table}
+}{\PendingResults{generated/table_identity_temporal.tex}}
+
+\FigureGenerated{../figures/investigation/identity_temporal_coverage.pdf}
+  {Securities with positive-price and positive-volume observations by year.}
+  {fig:identity_temporal}
+
+\textbf{Conclusion and uncertainty.} This supports checkpoint attribution and
+rejects a simple cumulative-count explanation for 2025. It does not prove
+continuous trading: \StoppedTradingCandidates{} securities have at least ten
+trailing sessions after their last positive-volume trade with unchanged
+zero-volume rows. They are flagged as stopped-trading candidates because
+verified delisting dates remain unavailable. An identity-valid checkpoint is
+therefore a prerequisite for descriptive use, not proof of an uninterrupted
+listing.
+
+\textbf{Recommended action.} Preserve the checkpoint identity audit, exclude
+all-NaN placeholders from analytical bases, and review trailing zero-volume
+tails before time-series feature construction.

@@ -1,0 +1,47 @@
+\section{Before-and-After Data Quality Comparison}
+
+Table~\ref{tab:before-after} independently recounts the original acquired
+cohort and the ADTV-filtered cohort. Rate definitions follow the relevant
+metric: validated-row share uses raw rows as its denominator; missing-row rates
+use raw rows; abnormal diagnostic-return rates use diagnostic rows; and the
+remaining event rates use their existing audit denominators. These differences
+are intentional and prevent incompatible counts from being forced into one
+denominator.
+
+\begin{table}[H]
+\centering
+\caption{Before-and-after data-quality comparison}
+\label{tab:before-after}
+\scriptsize
+\GeneratedTable{table_before_after}
+\begin{tablenotes}\small
+\item The validated-row row shows the share of raw rows retained in the base.
+The extreme-return, corporate-action, and quarantine rates use their
+independently generated audit denominators. Diagnostic totals can exceed
+validated rows because diagnostics are available before invalid raw
+placeholders are removed.
+\end{tablenotes}
+\end{table}
+
+Measured in the raw acquired versus selected-raw archives, the filter reduces
+missing adjusted-close rows from 41,618 to \MissingAdjClose{}, zero-volume rows
+from 138,694 to \ZeroVolumeRows{}, and
+quarantine-candidate rows/windows from 1,386 to \QuarantineRowsWindows{}.
+It reduces extreme diagnostic returns from 5,409 to \ExtremeReturns{} and
+corporate-action case records from 34 to \CorporateActionCaseRecords{}.
+These are cohort-composition effects, not proof that liquidity filtering fixes
+the vendor's data-generation process.
+
+\begin{table}[H]
+\centering
+\caption{Selected-cohort observations and missing values by year}
+\label{tab:quality-year}
+\small
+\GeneratedTable{table_quality_by_year}
+\end{table}
+
+The selected panel has 488 valid-price securities in 2022--2025 but fewer in
+earlier years because many selected companies listed after 2016. This pattern
+is consistent with the observed first dates but, absent verified listing
+metadata, is not labelled as fully structural. Counts by year should not be
+read as a historical universe count.

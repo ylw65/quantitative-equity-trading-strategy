@@ -1,0 +1,4 @@
+
+The acquired Yahoo histories record \SplitEvents{} split events and \DividendEvents{} dividend events. Raw and adjusted fields are both preserved. Yahoo's nominal Close is itself back-adjusted across splits, so the audit tests continuity between nominal and adjusted closes at event dates while retaining the split multiplier as metadata. \SplitFlags{} events remain associated with at least one continuity flag at the three-percent relative-error tolerance. This is a screening result, not proof of a vendor error in every case.
+
+Reported share volume remains in vendor units. The data do not establish that historical volume was normalized for splits, and no split-adjusted volume transformation is performed in this phase.

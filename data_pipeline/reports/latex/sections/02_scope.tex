@@ -1,0 +1,37 @@
+\section{Research Scope and Dataset Definition}
+
+\subsection{Reference universe}
+
+The reference date is 3 January 2023, the first US equity trading day of that
+year. Eligible instruments are US-listed ordinary common stocks and common
+equity classes on NYSE, Nasdaq, and NYSE American. The initial universe excludes
+ADRs, ETFs, mutual funds, preferred shares, warrants, rights, units, debt
+securities, and other non-common-equity instruments. REITs remain eligible only
+when their listed instrument satisfies the common-equity definition.
+
+Securities are not required to survive through 2025 or to have traded
+continuously from 2016. Ticker symbols are treated as time-varying labels, not
+as permanent identifiers.
+
+\subsection{Observation window}
+
+The acquisition window is 1 January 2016 through 31 December 2025 inclusive.
+The API end date is represented as the exclusive timestamp 1 January 2026.
+Calendar filtering follows the US exchange calendar; weekend and holiday
+absences are structural, not missing observations.
+
+\subsection{Analytical boundary}
+
+This phase covers acquisition, standardization, validation, exploratory data
+analysis, and documentation. It does not implement a training, validation, or
+testing split. It also excludes model fitting, strategy-specific feature
+engineering, portfolio construction, and backtesting.
+
+\subsection{Market-data fields}
+
+Yahoo Finance is the primary price source. Raw open, high, low, close, adjusted
+close, volume, dividends, and stock splits are retained before validation.
+The research-facing base exposes \texttt{date}, \texttt{security\_id},
+\texttt{ticker}, \texttt{volume}, \texttt{adj\_close}, and the reserved
+\texttt{pct\_return} field. In this phase, \texttt{pct\_return} remains null;
+temporary return calculations are diagnostic only.

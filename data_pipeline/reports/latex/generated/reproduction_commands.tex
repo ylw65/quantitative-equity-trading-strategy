@@ -1,0 +1,21 @@
+
+\begin{verbatim}
+conda env create -f environment.yml
+conda activate dsa5205_proj2
+export SEC_USER_AGENT='Academic project name and contact email'
+python scripts/build_universe.py
+python scripts/download_data.py \
+  --universe data/universe/security_master.parquet \
+  --batch-size 50
+python scripts/validate_data.py \
+  --config configs/acquisition.yaml \
+  --raw-dir data/raw/yahoo \
+  --master data/universe/security_master.parquet \
+  --output-dir data/validated \
+  --metadata-dir data/metadata \
+  --manifest data/metadata/download_manifest.csv \
+  --failures data/metadata/download_failures.csv
+python scripts/run_eda.py
+cd reports/latex && latexmk -pdf -interaction=nonstopmode main.tex
+python -m pytest -q
+\end{verbatim}

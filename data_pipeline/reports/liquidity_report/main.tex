@@ -1,0 +1,126 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.35cm,headheight=22pt]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{Navy}{HTML}{19324D}
+\definecolor{Slate}{HTML}{566573}
+\definecolor{SoftBG}{HTML}{F3F6F7}
+\definecolor{SoftRule}{HTML}{8FA3B0}
+
+\graphicspath{{../figures/liquidity/}}
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist{itemsep=0.25em,topsep=0.45em}
+\renewcommand{\arraystretch}{1.14}
+\sisetup{group-separator={,},group-minimum-digits=4}
+\bibliographystyle{plainnat}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{Slate}Liquidity-Filtered US Equity Panel}
+\fancyhead[R]{\small\color{Slate}2016--2025}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{SoftRule}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{Navy}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\large\bfseries\color{Navy}}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{Navy}}{\thesubsubsection}{0.6em}{}
+
+\newcommand{\GeneratedInput}[1]{\input{generated/#1.tex}}
+\newcommand{\GeneratedFigure}[3]{%
+  \begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{#1}
+    \caption{#2}
+    \label{#3}
+  \end{figure}}
+\newcommand{\GeneratedTable}[1]{\adjustbox{max width=\linewidth}{\input{generated/#1.tex}}}
+\newcommand{\SnapshotNote}{%
+  \begin{center}
+  \fcolorbox{SoftRule}{SoftBG}{%
+    \begin{minipage}{0.94\linewidth}\raggedright
+    \small\textbf{Snapshot contract.}
+    All empirical quantities in this report come from
+    \texttt{data/filtered/adtv100m\_2023}. The machine-readable source is
+    \texttt{generated/report\_statistics.json}.
+    \end{minipage}}
+  \end{center}}
+
+\GeneratedInput{macros}
+
+\title{\color{Navy}\textbf{Liquidity-Based Universe Selection and\\
+Post-Filter Data Quality Assessment}}
+\author{DSA5205 Project Team}
+\date{Data snapshot generated 27 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This supplement constructs a fixed common-equity cohort using the final
+\LiquidityWindowSessions{} official XNYS sessions of 2022 and an inclusive
+\LiquidityThreshold{} average daily dollar trading-volume threshold. From a
+verified, partially reconstructed SEC-derived universe of
+\UniverseSecurities{} securities, Yahoo Finance histories are available for
+\AcquiredSecurities{}. Complete valid liquidity windows exist for
+\CompleteWindowSecurities{} securities; \SelectedSecurities{} meet the
+threshold, representing \SelectedIssuers{} distinct SEC issuers. Their retained
+2016--2025 panel contains \SelectedObservations{} validated stock-day records.
+The filter removes most historical vendor placeholders and zero-volume rows,
+but it does not eliminate all interpretable corporate-action cases. The cohort
+also has a strong retrospective survivorship structure and must not be treated
+as a point-in-time historical universe.
+\end{abstract}
+
+\SnapshotNote
+
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+
+\input{sections/01_executive_summary}
+\input{sections/02_objective_context}
+\input{sections/03_original_dataset}
+\input{sections/04_methodology}
+\input{sections/05_price_volume}
+\input{sections/06_retained_excluded}
+\input{sections/07_liquidity_distribution}
+\input{sections/08_missing_data}
+\input{sections/09_extremes}
+\input{sections/10_volume}
+\input{sections/11_corporate_identity}
+\input{sections/12_before_after}
+\input{sections/13_bias_limitations}
+\input{sections/14_conclusions}
+
+\appendix
+\input{sections/A_data_dictionary}
+\input{sections/A_reproduction}
+
+\clearpage
+\bibliography{../latex/references}
+
+\end{document}

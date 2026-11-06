@@ -1,0 +1,32 @@
+\section{Price and Volume Adjustment Conventions}
+\label{sec:price-volume}
+
+Yahoo Finance's nominal \texttt{Close} history is back-adjusted for splits,
+while the reported \texttt{Volume} series remains the contemporaneous share
+count. Multiplying those two fields directly can understate pre-split dollar
+trading value. The screen therefore identifies stock-split factors dated after
+each window observation through 31 December 2025 and multiplies the vendor
+close by their cumulative product. The restored close is then multiplied by
+reported volume.
+
+This is not a use of future market information to decide eligibility. The later
+split factor is metadata required to undo the vendor's historical price
+normalization. Future prices, returns, trading volumes, market capitalisation,
+and future fundamentals are excluded from the rule. The raw selection archive
+preserves the vendor close, future factor, restored close, reported volume, and
+daily dollar value.
+
+Among selected securities, \SelectedWithFutureSplitAdjustment{} require at
+least one future split restoration in the 20-session window, representing
+\FutureSplitEventsRestored{} distinct security-split restorations. Examples
+include large post-2022 split factors; the screen restores the December 2022
+price basis rather than comparing a split-normalized close with
+contemporaneous volume. No selected security is assigned an unresolved
+price-volume compatibility status: \UnresolvedPriceVolume{}.
+
+Volume is interpreted as reported share volume. It is not dollar volume,
+normalized volume, or a split-adjusted volume series. The research base
+therefore preserves the vendor convention explicitly and avoids presenting
+volume differences around splits as economic changes without an additional,
+documented transformation. No ADV or relative-volume feature is constructed in
+this phase.

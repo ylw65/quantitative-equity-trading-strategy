@@ -1,0 +1,25 @@
+{
+  "frozen_before_test_evaluation": true,
+  "period": [
+    "2024-01-01",
+    "2025-12-31"
+  ],
+  "model_policy": "Use unchanged frozen 2023 classifier, preprocessing, calibration and median threshold throughout both test years. No fitting on 2023, 2024 or 2025.",
+  "universe_policy": "Primary frozen474 and delivered486 sensitivity; no new universe selection.",
+  "portfolio_policy": "Fresh initial capital at first 2024 session; continuous 2024-2025 ledger; prior history used only for causal feature/signal warmup. Same 60/40 allocation and execution rules.",
+  "fees": [
+    0.002,
+    0.001,
+    0.003
+  ],
+  "reporting": "Six fee/universe scenarios with calendar-year breakdowns.",
+  "hashes": {
+    "configs/strategy.yaml": "34d0e8a7a87151aa3ba228ce40301a1863809252fb1d05ba072a1a7bb32e482d",
+    "models/entry_2023.joblib": "81cef4a3e4eb733ce1e1acbedb2e3be32d5f26adf6d447878b178189d9c5c33d",
+    "models/universe_2023.csv": "bf44ce648ce00f33222abccbbb3f0bcb0a39829a03b89ed4e9b88b8214284223",
+    "models/manifest.json": "3d87340830c09e5000d2e2d38273429cd8c71d878a1a221cf95ab85128191c81",
+    "src/strategy.py": "a8552d9e423f068f799eef1b25f74c728cb23cd1d1e31b853cfd84c3d39a18fe",
+    "src/features.py": "2d7cf283d919a28df11230f2ed96725c1ea7fa0150c6a98fbbc05b414c5db13a",
+    "src/ml.py": "f242eb76b3df0d4222c32f44da616589b8fb622b9f05bbb32ced8fbc8feb0513"
+  }
+}

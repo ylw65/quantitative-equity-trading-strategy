@@ -1,0 +1,32 @@
+\section{Data Dictionary and Snapshot Contract}
+
+\begin{longtable}{@{}p{0.27\linewidth}p{0.64\linewidth}@{}}
+\toprule
+Field or artifact & Definition \\
+\midrule
+\endfirsthead
+\toprule
+Field or artifact & Definition \\
+\midrule
+\endhead
+\texttt{security\_id} & Existing permanent research identity; ticker is not used as the sole identity. \\
+\texttt{date} & US trading date retained in the validated base. \\
+\texttt{volume} & Yahoo reported share volume; zero is retained as a valid reported value. \\
+\texttt{adj\_close} & Existing dividend- and split-adjusted close from the research base. \\
+\texttt{pct\_return} & Reserved research-base field; null in this phase. \\
+\texttt{adtv20\_usd} & Mean restored dollar volume over the 20-session 2022 window. \\
+\texttt{screen\_status} & Mutually exclusive selection outcome. \\
+\path{selected_security_master.parquet} & Selected identities plus screen metadata. \\
+\path{selected_equity_daily.parquet} & Full available selected 2016--2025 validated panel. \\
+\path{liquidity_window_observations.parquet} & Explicit 20-session grid with vendor, restored, and valid fields. \\
+\path{filter_metadata.json} & Parameters, source hashes, software versions, and selection flow. \\
+\path{post_filter_integrity_summary.json} & Reconciled selected-cohort quality statistics. \\
+\path{post_filter_anomaly_summary.json} & Extreme, volume, corporate-action, and quarantine evidence. \\
+\path{filtered_data_issues.csv} & Existing validation issues scoped to selected identities. \\
+\bottomrule
+\end{longtable}
+
+The report's numeric source is
+\texttt{generated/report\_statistics.json}. The generated macros, tables, and
+figures are deterministic functions of the filtered snapshot. The protected
+input check reports status: \ProtectedInputsUnchanged{}.

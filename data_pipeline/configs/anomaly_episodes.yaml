@@ -1,0 +1,36 @@
+project:
+  name: filtered_anomaly_episodes
+  calendar: XNYS
+  start_date: "2016-01-01"
+  end_date: "2025-12-31"
+  context_sessions_before: 5
+  context_sessions_after: 5
+
+inputs:
+  filtered_root: data/filtered/adtv100m_2023
+  selected_master: data/filtered/adtv100m_2023/selected_security_master.parquet
+  selected_daily: data/filtered/adtv100m_2023/selected_equity_daily.parquet
+  standardized_raw: data/validated/standardized_raw.parquet
+  diagnostic_returns: data/validated/diagnostic_returns.parquet
+  validation_issues: data/validated/data_issues.csv
+  filtered_quality_dir: data/filtered/adtv100m_2023/quality
+  raw_yahoo_dir: data/raw/yahoo
+
+outputs:
+  root: data/investigation/filtered_anomaly_episodes
+  methodology: docs/anomaly_episodes.md
+
+priority:
+  liquidity_window_start: "2022-12-02"
+  liquidity_window_end: "2022-12-30"
+  material_daily_dollar_volume_usd: 100000000
+  multi_session_zero_volume_min_sessions: 2
+
+research_constraints:
+  initiate_downloads: false
+  modify_source_data: false
+  calculate_final_returns: false
+  strategy_features: false
+  chronological_split: false
+  model_training: false
+  backtesting: false

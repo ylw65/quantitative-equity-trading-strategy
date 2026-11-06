@@ -1,0 +1,33 @@
+\section{Missing Data and Structural Gaps}
+
+Missing observations are classified before they are summarized. Pre-IPO and
+post-delisting absences are structural; weekends and exchange holidays are
+calendar effects. Trading suspensions, vendor failures, unexpected gaps during
+verified active listing periods, and unknown causes require separate flags.
+No missing price or volume is filled with zero.
+
+\InputGenerated{generated/missingness_results.tex}
+
+\IfFileExists{generated/table_missingness_by_year.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Missing adjusted-close and volume observations by year.}
+    \label{tab:missing_year}
+    \small
+    \input{generated/table_missingness_by_year.tex}
+  \end{table}
+}{\PendingResults{generated/table_missingness_by_year.tex}}
+
+\FigureGenerated{../figures/missingness_distribution.pdf}
+  {Distribution of missing-session rates across securities during verified active periods.}
+  {fig:missing_distribution}
+
+\IfFileExists{generated/table_gap_examples.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Examples of unexpected security-level trading gaps.}
+    \label{tab:gap_examples}
+    \small
+    \input{generated/table_gap_examples.tex}
+  \end{table}
+}{\PendingResults{generated/table_gap_examples.tex}}

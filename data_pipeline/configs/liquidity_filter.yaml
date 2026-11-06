@@ -1,0 +1,44 @@
+project:
+  name: adtv100m_2023
+  as_of_date: "2023-01-03"
+  window_end: "2022-12-30"
+  window_sessions: 20
+  calendar: XNYS
+  threshold_usd: 100000000
+  price_basis: yahoo_nominal_close
+  volume_basis: reported_share_volume
+  future_split_adjustment:
+    enabled: true
+    end_date: "2025-12-31"
+    rule: "multiply each nominal Close by the cumulative product of split factors dated after that observation through 2025-12-31"
+  sensitivity_thresholds_usd:
+    - 1000000
+    - 5000000
+    - 10000000
+    - 25000000
+    - 50000000
+
+inputs:
+  security_master: data/universe/security_master.parquet
+  base: data/validated/base.parquet
+  standardized_raw: data/validated/standardized_raw.parquet
+  diagnostic_returns: data/validated/diagnostic_returns.parquet
+  quality_by_security: data/validated/data_quality_by_security.csv
+  quality_by_year: data/validated/data_quality_by_year.csv
+  validation_issues: data/validated/data_issues.csv
+  investigation_issues: data/issues/investigation_issue_register.csv
+  download_manifest: data/metadata/download_manifest.csv
+
+outputs:
+  root: data/filtered/adtv100m_2023
+  tables: reports/tables/liquidity
+  figures: reports/figures/liquidity
+  report_source: reports/liquidity_report
+  report_pdf: reports/liquidity_report/main.pdf
+
+research_constraints:
+  recalculate_final_pct_return: false
+  strategy_features: false
+  chronological_split: false
+  model_training: false
+  backtesting: false

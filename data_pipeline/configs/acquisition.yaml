@@ -1,0 +1,92 @@
+project:
+  name: us_equity_data
+  as_of_timezone: America/New_York
+  reference_date: "2023-01-03"
+  start_date: "2016-01-01"
+  end_date_exclusive: "2026-01-01"
+
+paths:
+  universe_dir: data/universe
+  raw_dir: data/raw/yahoo
+  metadata_dir: data/metadata
+  validated_dir: data/validated
+  figures_dir: reports/figures
+  tables_dir: reports/tables
+  logs_dir: logs
+
+universe:
+  sec_user_agent_env: SEC_USER_AGENT
+  sec_filing_index_2022_q4_url: "https://www.sec.gov/Archives/edgar/full-index/2022/QTR4/company.idx"
+  sec_filing_index_url: "https://www.sec.gov/Archives/edgar/full-index/2023/QTR1/company.idx"
+  sec_current_tickers_url: "https://www.sec.gov/files/company_tickers_exchange.json"
+  primary_forms:
+    - 10-K
+    - 10-Q
+    - 20-F
+    - 40-F
+  allowed_exchanges:
+    - NYSE
+    - Nasdaq
+    - NYSE American
+  include_security_types:
+    - common_stock
+    - common_equity_class
+    - ordinary_shares
+    - reit_common_stock
+  exclude_security_types:
+    - adr
+    - etf
+    - fund
+    - preferred
+    - warrant
+    - right
+    - unit
+    - note
+    - debt
+    - trust
+  filing_probe_bytes: 1048576
+  sec_compressed_probe_bytes: 131072
+  sec_requests_per_second: 5.0
+  request_timeout_seconds: 30
+  retries: 3
+
+download:
+  provider: yahoo_finance
+  library: yfinance
+  batch_size: 50
+  max_workers: 3
+  retries: 3
+  backoff_seconds: 5.0
+  request_pause_seconds: 0.5
+  timeout_seconds: 45
+  auto_adjust: false
+  actions: true
+  repair: true
+  group_by: ticker
+  threads: false
+  checkpoint: true
+
+validation:
+  us_calendar: XNYS
+  minimum_valid_sessions: 252
+  extreme_return_abs_threshold: 0.50
+  extreme_volume_ratio_threshold: 20.0
+  max_unexpected_gap_sessions: 10
+  split_relative_tolerance: 0.03
+  dividend_adjustment_tolerance: 0.01
+  expected_raw_columns:
+    - open
+    - high
+    - low
+    - close
+    - adj_close
+    - volume
+    - dividends
+    - stock_splits
+
+research_constraints:
+  calculate_final_pct_return: false
+  train_validation_test_split: false
+  model_training: false
+  backtesting: false
+  strategy_features: false

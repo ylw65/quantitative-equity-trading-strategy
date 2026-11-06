@@ -1,0 +1,48 @@
+\section{Data Cleaning Decisions and Unresolved Issues}
+
+Cleaning decisions are limited to schema standardization, documented
+deduplication, and flags for suspect observations. Prices and volumes are not
+zero-filled; genuine extreme observations are not winsorized or deleted. Any
+security-specific correction requires a resolution record with source evidence
+and must remain reversible against the raw data.
+
+\InputGenerated{generated/cleaning_decisions.tex}
+
+\IfFileExists{generated/table_issue_summary.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Severity-ranked issue-register row summary across universe and validation scopes.}
+    \label{tab:issue_summary}
+    \small
+    \input{generated/table_issue_summary.tex}
+  \end{table}
+}{\PendingResults{generated/table_issue_summary.tex}}
+
+\subsection{Quarantine and dataset readiness}
+
+\IfFileExists{generated/table_quarantine_summary.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Reversible analysis-quarantine candidates by scope and reason.}
+    \label{tab:quarantine_summary}
+    \small
+    \input{generated/table_quarantine_summary.tex}
+  \end{table}
+}{\PendingResults{generated/table_quarantine_summary.tex}}
+
+\IfFileExists{generated/table_dataset_readiness.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Dataset-readiness assessment for subsequent research.}
+    \label{tab:dataset_readiness}
+    \scriptsize
+    \resizebox{\linewidth}{!}{\input{generated/table_dataset_readiness.tex}}
+  \end{table}
+}{\PendingResults{generated/table_dataset_readiness.tex}}
+
+The research-facing base remains unchanged. Quarantine flags are separate,
+reversible analysis metadata and never overwrite or delete raw observations.
+The dataset is ready for descriptive analysis of the acquired Yahoo subset,
+subject to explicit coverage limitations. Return diagnostics require the
+quarantine rules. Strategy-feature engineering and modeling remain outside this
+phase and require additional validation after a future chronological split.

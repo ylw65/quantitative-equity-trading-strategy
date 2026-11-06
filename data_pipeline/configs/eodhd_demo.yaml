@@ -1,0 +1,34 @@
+source:
+  provider: eodhd_public_demo
+  api_base: "https://eodhd.com/api"
+  token_env: EODHD_API_TOKEN
+  public_demo_default: demo
+  requests_per_second: 0.8
+  timeout_seconds: 45
+  retries: 3
+  backoff_seconds: 5
+
+sample:
+  limit: 40
+  seed: 5205
+  explicit_tickers:
+    - AAPL
+    - MSFT
+    - TSLA
+
+period:
+  start_date: "2016-01-01"
+  end_date_exclusive: "2026-01-01"
+
+paths:
+  universe: data/universe/security_master.parquet
+  raw_root: data/raw/eodhd_demo
+  metadata_dir: data/metadata
+
+scope:
+  empirical_role: secondary_sample_only
+  full_universe_replacement: false
+  limitations:
+    - Public demo credentials may restrict ticker access.
+    - The selected sample is not the full historical universe.
+    - This source does not repair or replace the failed primary Yahoo acquisition.

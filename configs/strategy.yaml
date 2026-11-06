@@ -1,0 +1,77 @@
+version: core60_active40_ml_past_median_final_v1
+source_read_only: true
+allowed_start: '2016-01-01'
+allowed_end: '2022-12-31'
+validation_enabled: false
+test_enabled: false
+data_directory: data_current/adtv100m_2023_eligibility_v3_ohlc
+allocation:
+  passive_core: 0.6
+  active_satellite: 0.4
+  transfers: none
+signal:
+  adv_days: 20
+  reversal_days: 5
+  history_days: 25
+  volume_rank_weight: 0.5
+  reversal_rank_weight: 0.5
+  relative_volume_min: 1.5
+  relative_volume_max: 5.0
+  drop_min: 0.065
+  weak_same_direction_exit: false
+  max_age_sessions: 30
+  opposite_relative_volume_min: 1.5
+  opposite_rise_min: 0.05
+  failure_exit:
+    event_low_break: true
+    no_rebound_sessions: 0
+    cooldown_sessions: 0
+  market_breadth_budget:
+    enabled: false
+    lookback_sessions: 5
+    stock_drop: 0.05
+    medium_fraction: 0.20
+    severe_fraction: 0.35
+    medium_budget: 0.50
+    severe_budget: 0.25
+selection:
+  enter_rank: 20
+  retain_rank: 40
+  rebalance_sessions: 5
+  phases: [0, 1, 2, 3, 4]
+portfolio:
+  initial_nav: 1000000
+  long_budget: 1.0
+  short_budget: 0.0
+  gross_cap: 1.0
+  net_cap: 1.0
+  security_cap: 0.05
+  issuer_cap: 0.05
+execution:
+  lag_sessions: 1
+  price: adj_close
+  hold_units_between_rebalances: true
+  terminal_liquidation: false
+costs:
+  transaction: 0.002
+  sensitivity: [0.001, 0.003]
+  borrow: 0.0
+  cash_yield: 0.0
+  calendar_days: 365
+ml:
+  enabled: true
+  family: logistic_noage
+  classifier_C: 0.1
+  calibration_C: 10
+  max_iter: 600
+  clip_quantiles: [0.01, 0.99]
+  entry_quantile: 0.5
+  prior_adv_minimum: 20000000
+  label_transaction_cost: 0.002
+  training_prediction_start: '2019-01-01'
+  frozen_model: models/entry_2023.joblib
+  frozen_universe: models/universe_2023.csv
+policy:
+  final_selected: true
+  research_only: true
+  deployment: RESEARCH_FINAL_NOT_LIVE_APPROVED

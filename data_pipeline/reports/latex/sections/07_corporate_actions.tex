@@ -1,0 +1,85 @@
+\section{Corporate Actions and Adjusted Prices}
+
+Stock splits and dividends are retained as vendor events. Representative
+split-event windows are audited for continuity in adjusted returns and for
+changes in reported share volume. Signed adjustment factors are not inferred
+from the direction of a price change alone. The volume adjustment policy is
+documented explicitly; reported share volume is not relabelled as dollar
+volume, and normalization for splits is not assumed without evidence.
+
+\InputGenerated{generated/corporate_action_results.tex}
+
+\IfFileExists{generated/table_action_counts.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Recorded dividend and split events by year.}
+    \label{tab:action_counts}
+    \small
+    \input{generated/table_action_counts.tex}
+  \end{table}
+}{\PendingResults{generated/table_action_counts.tex}}
+
+\FigureGenerated{../figures/corporate_actions_by_year.pdf}
+  {Recorded dividend and stock-split events in the validated Yahoo histories.}
+  {fig:action_counts}
+
+\IfFileExists{generated/table_dividend_audit.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Representative dividend-event continuity checks; cash amounts are USD per share.}
+    \label{tab:dividend_audit}
+    \small
+    \input{generated/table_dividend_audit.tex}
+  \end{table}
+}{\PendingResults{generated/table_dividend_audit.tex}}
+
+\IfFileExists{generated/table_split_audit.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Representative split-event audit windows.}
+    \label{tab:split_audit}
+    \small
+    \input{generated/table_split_audit.tex}
+  \end{table}
+}{\PendingResults{generated/table_split_audit.tex}}
+
+\FigureGenerated{../figures/split_adjustment_audit.pdf}
+  {Representative before-and-after adjusted-price continuity around splits.}
+  {fig:split_audit}
+
+\subsection{Corporate-action reconciliation}
+
+The prior validation's three split-continuity flags were independently
+reproduced and all coincide with a distribution on the same date. The current
+vendor-aware validator moves those cases to the combined-action issue category,
+leaving \SplitFlags{} simple split-continuity flags. The dividend flags were
+reproduced and classified into special distributions, large adjustment events,
+simultaneous split/distribution events, and ordinary dividend mismatches.
+
+\IfFileExists{generated/table_corporate_action_reconciliation.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Representative corporate-action reconciliation.}
+    \label{tab:corporate_action_reconciliation}
+    \scriptsize
+    \resizebox{\linewidth}{!}{\input{generated/table_corporate_action_reconciliation.tex}}
+  \end{table}
+}{\PendingResults{generated/table_corporate_action_reconciliation.tex}}
+
+\FigureGenerated{../figures/investigation/anomaly_corporate_action_reconciliation.pdf}
+  {Original corporate-action flags and reconciled evidence classifications.}
+  {fig:anomaly_corporate_actions}
+
+Danaher's 2016 separation and distribution is independently documented in its
+SEC Form 8-K \citep{secDHR2016}. Keurig Dr Pepper's 2018 special cash dividend
+is independently documented in its SEC Form 8-K \citep{secKDP2018}. These
+resolve the event type but not every detail of Yahoo's adjustment arithmetic.
+
+\textbf{Evidence and uncertainty.} The tests recomputed raw and adjusted gross
+returns, dividend fractions, split metadata, and vendor repair flags on each
+flagged event. The evidence supports the conclusion that the original split flags are
+combined actions and that most dividend flags are distributions rather than
+ordinary dividends. Most non-special events lack an independently verified
+event-type source, and Yahoo does not expose structured distribution
+classifications. The recommended action is an action-specific continuity test,
+not an assumption that every observed distribution belongs in the same formula.

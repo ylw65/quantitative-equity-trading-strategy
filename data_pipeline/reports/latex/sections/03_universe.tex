@@ -1,0 +1,52 @@
+\section{Historical Stock Universe Construction}
+
+\InputGenerated{generated/universe_method.tex}
+
+Cover-page evidence is drawn from the SEC EDGAR quarterly company indexes and
+current ticker/exchange reference files \citep{sec2023index,seccompanytickers}.
+
+\subsection{Security identity and symbols}
+
+SEC CIK numbers are preferred as stable identifiers when available. A
+reference-date ticker is retained separately from the Yahoo-compatible symbol.
+Where a CIK cannot be attached, a deterministic fallback identifier is recorded
+and the mapping is labelled unresolved. Former names, ticker changes, and
+ticker reuse are retained in the security master rather than inferred from
+current listings.
+
+\subsection{Eligibility evidence}
+
+Inclusion is supported by reference-date proximity, SEC registrant filings,
+security-title evidence, and exchange evidence. Current survivors are not used
+as a substitute for the historical universe. Classification uncertainty is
+recorded in the issue register with source confidence.
+
+\InputGenerated{generated/universe_results.tex}
+
+\IfFileExists{generated/table_universe_by_exchange.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Verified and unresolved reference-date universe by exchange.}
+    \label{tab:universe_exchange}
+    \small
+    \input{generated/table_universe_by_exchange.tex}
+  \end{table}
+}{\PendingResults{generated/table_universe_by_exchange.tex}}
+
+\IfFileExists{generated/table_universe_by_type.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Eligible common-equity securities by documented security category.}
+    \label{tab:universe_type}
+    \small
+    \input{generated/table_universe_by_type.tex}
+  \end{table}
+}{\PendingResults{generated/table_universe_by_type.tex}}
+
+\FigureGenerated{../figures/universe_composition.pdf}
+  {Verified security composition by exchange and documented common-equity category.}
+  {fig:universe_composition}
+
+\FigureGenerated{../figures/issue_composition.pdf}
+  {Severity and frequency of source-universe issue groups.}
+  {fig:issue_composition}

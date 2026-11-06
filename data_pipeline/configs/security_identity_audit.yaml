@@ -1,0 +1,33 @@
+project:
+  name: security_identity_audit_488
+  calendar: XNYS
+  audit_date: "2026-10-29"
+  observation_start: "2016-01-01"
+  observation_end: "2025-12-31"
+  reference_date: "2023-01-03"
+  sec_requests_per_second: 5
+  sec_retries: 3
+  successor_name_similarity_threshold: 0.50
+
+inputs:
+  selected_master: data/filtered/adtv100m_2023_eligibility_v2/selected_security_master.parquet
+  selected_daily: data/filtered/adtv100m_2023_eligibility_v2/selected_equity_daily.parquet
+  final_eligibility_root: data/filtered/adtv100m_2023_eligibility_v2
+  download_manifest: data/metadata/download_manifest.csv
+  current_sec_tickers: data/metadata/sec_company_tickers_exchange.json
+  security_last_trade: data/investigation/identity/security_last_trade.csv
+  identity_validation: data/investigation/identity/identity_validation.csv
+  historical_eligibility_policy: data/metadata/historical_eligibility_policy.csv
+  curated_evidence: data/metadata/security_identity_evidence.json
+  raw_yahoo_root: data/raw/yahoo
+
+outputs:
+  root: data/investigation/security_identity_audit_488
+  sec_submissions_cache: data/investigation/security_identity_audit_488/cache/sec_submissions
+
+research_constraints:
+  read_only: true
+  modify_market_data: false
+  modify_selected_universe: false
+  download_yahoo_prices: false
+  automatically_apply_identity_corrections: false

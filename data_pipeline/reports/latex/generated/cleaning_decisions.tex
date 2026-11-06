@@ -1,0 +1,4 @@
+
+Validation removed \DuplicateBaseKeys{} duplicate security-date keys from the research-facing base after deterministic ordering; no duplicate key remains. Raw observations and separate standardized audit data remain available. Missing values were not zero-filled, and no price or volume was winsorized, clipped, or deleted merely because it was extreme.
+
+The split-continuity test was made vendor-aware: Yahoo's nominal Close is already split-continuous and is checked against a unit implied factor, while an unadjusted close series is checked against the event multiplier. The final base retains a null \texttt{pct\_return} column as required. The validation issue register contains \ValidationIssues{} grouped findings and \CriticalIssues{} critical groups; it separates acquisition failures from observation-level quality checks.

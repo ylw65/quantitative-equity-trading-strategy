@@ -1,0 +1,20 @@
+\section{Reproduction Instructions}
+
+Run from the project root after activating the Python 3.11 environment:
+
+\begin{verbatim}
+conda activate dsa5205_proj2
+python scripts/build_historical_eligibility.py \
+  --config configs/historical_eligibility.yaml
+python scripts/build_final_quality_report.py \
+  --config configs/historical_eligibility.yaml
+python scripts/check_final_quality_report_consistency.py \
+  --config configs/historical_eligibility.yaml
+cd reports/final_data_quality_report
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+cd ../..
+python -m pytest -q
+\end{verbatim}
+
+The dataset build and report assets are also available through
+\texttt{make final-quality}, followed by \texttt{make test}.

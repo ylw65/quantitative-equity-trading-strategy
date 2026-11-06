@@ -1,0 +1,119 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.45cm,headheight=22pt]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{Navy}{HTML}{19324D}
+\definecolor{Slate}{HTML}{566573}
+\definecolor{NoticeBG}{HTML}{F2F5F7}
+\definecolor{NoticeRule}{HTML}{8FA3B0}
+
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist{itemsep=0.25em,topsep=0.45em}
+\renewcommand{\arraystretch}{1.16}
+\setlength{\LTpre}{0.8em}
+\setlength{\LTpost}{0.8em}
+\sisetup{group-separator={,},group-minimum-digits=4}
+\bibliographystyle{plainnat}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{Slate}US Equity Data Quality Assessment}
+\fancyhead[R]{\small\color{Slate}2016--2025}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{NoticeRule}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{Navy}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\large\bfseries\color{Navy}}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{Navy}}{\thesubsubsection}{0.6em}{}
+
+\newcommand{\GeneratedPath}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\PendingResults}[1]{%
+  \begin{center}
+  \fcolorbox{NoticeRule}{NoticeBG}{%
+    \begin{minipage}{0.91\linewidth}
+    \small\textbf{Empirical artifact pending.}
+    This section is populated from actual generated data only.
+    Expected input: \GeneratedPath{#1}.
+    \end{minipage}}
+  \end{center}
+}
+\newcommand{\InputGenerated}[1]{%
+  \IfFileExists{#1}{\input{#1}}{\PendingResults{#1}}%
+}
+\newcommand{\FigureGenerated}[3]{%
+  \IfFileExists{#1}{%
+    \begin{figure}[tbp]
+      \centering
+      \includegraphics[width=\linewidth,height=0.72\textheight,keepaspectratio]{#1}
+      \caption{#2}
+      \label{#3}
+    \end{figure}
+  }{\PendingResults{#1}}%
+}
+
+\input{generated/macros}
+\input{generated/investigation_macros}
+
+\title{\color{Navy}\textbf{Historical US Equity Data Acquisition and Quality Assessment (2016-2025)}}
+\author{DSA5205 Project Team}
+\date{Generated \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\InputGenerated{generated/abstract.tex}
+\end{abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+
+\input{sections/01_executive_summary}
+\input{sections/02_scope}
+\input{sections/03_universe}
+\input{sections/04_acquisition}
+\input{sections/05_coverage}
+\input{sections/05a_identity_temporal}
+\input{sections/05b_missing_security}
+\input{sections/06_missingness}
+\input{sections/07_corporate_actions}
+\input{sections/08_volume}
+\input{sections/09_extremes}
+\input{sections/10_identity_bias}
+\input{sections/11_decisions}
+\input{sections/12_limitations}
+\input{sections/13_conclusions}
+
+\appendix
+\input{sections/A_data_dictionary}
+\input{sections/A_configuration}
+\input{sections/A_reproduction}
+
+\clearpage
+\bibliography{references}
+
+\end{document}

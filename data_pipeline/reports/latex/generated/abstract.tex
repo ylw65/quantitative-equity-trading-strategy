@@ -1,0 +1,15 @@
+
+This report documents the reconstruction of a historical US common-equity
+universe, acquisition of daily Yahoo Finance market data, standardized quality
+checks, and exploratory diagnostics for the period 1 January 2016 through
+31 December 2025. The verified partial universe contains \IncludedSecurities{}
+securities derived from \AuditRows{} audited SEC cover rows. Yahoo Finance is
+the authoritative market-data source for this report: all \YahooAttempted{}
+verified securities were attempted, \YahooSuccess{} produced usable histories,
+and \YahooFailed{} remained unavailable. The validated Yahoo base contains
+\Observations{} observations for \ObservedSecurities{} securities. The report
+treats security identity, historical eligibility, vendor completeness,
+missingness, corporate actions, extreme observations, and acquisition
+provenance as auditable properties rather than assumptions. It does not
+implement a chronological data split, strategy features, model training, or
+backtesting.

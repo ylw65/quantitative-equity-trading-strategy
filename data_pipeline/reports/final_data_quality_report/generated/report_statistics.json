@@ -1,0 +1,321 @@
+{
+  "generated_at_utc": "2026-10-28T14:50:07+00:00",
+  "snapshot": {
+    "securities": 488,
+    "issuers": 486,
+    "observations": 1186196,
+    "diagnostic_rows": 1188706,
+    "ferg_excluded": 1601,
+    "dkng_excluded": 189,
+    "total_excluded": 1790,
+    "zero_volume_rows": 16,
+    "zero_volume_securities": 13,
+    "zero_volume_episodes": 15,
+    "longest_zero_volume_episode": 2,
+    "extreme_volume_rows": 235,
+    "extreme_volume_securities": 118,
+    "extreme_volume_episodes": 179,
+    "extreme_volume_max_share_volume": 1333875000.0,
+    "extreme_volume_max_daily_dollar_volume": 301709179329.87213,
+    "extreme_price_rows": 0,
+    "extreme_price_securities": 0,
+    "extreme_return_rows": 45,
+    "extreme_return_securities": 20,
+    "extreme_return_positive": 36,
+    "extreme_return_negative": 9,
+    "extreme_return_episodes": 41,
+    "overlapping_extreme_volume_return_episodes": 18,
+    "corporate_action_related_extreme_returns": 1,
+    "unresolved_extreme_returns": 0,
+    "remaining_unresolved_quality_cases": {
+      "zero_volume_cause_unverified": 16,
+      "ordinary_dividend_adjustment_mismatch": 1,
+      "ohlc_consistency_open": 1,
+      "identity_review_candidates": 2
+    },
+    "fixed_membership_unchanged": true
+  },
+  "quality_summary": [
+    {
+      "metric": "Securities",
+      "original_acquired": 3239,
+      "original_liquidity_filtered": 488,
+      "final_research_dataset": 488,
+      "original_acquired_per_100k": NaN,
+      "original_liquidity_filtered_per_100k": NaN,
+      "final_research_dataset_per_100k": NaN
+    },
+    {
+      "metric": "Distinct SEC issuers",
+      "original_acquired": 3208,
+      "original_liquidity_filtered": 486,
+      "final_research_dataset": 486,
+      "original_acquired_per_100k": NaN,
+      "original_liquidity_filtered_per_100k": NaN,
+      "final_research_dataset_per_100k": NaN
+    },
+    {
+      "metric": "Validated stock-day observations",
+      "original_acquired": 7086540,
+      "original_liquidity_filtered": 1187986,
+      "final_research_dataset": 1186196,
+      "original_acquired_per_100k": NaN,
+      "original_liquidity_filtered_per_100k": NaN,
+      "final_research_dataset_per_100k": NaN
+    },
+    {
+      "metric": "FERG observations excluded",
+      "original_acquired": 0,
+      "original_liquidity_filtered": 0,
+      "final_research_dataset": 1601,
+      "original_acquired_per_100k": NaN,
+      "original_liquidity_filtered_per_100k": NaN,
+      "final_research_dataset_per_100k": NaN
+    },
+    {
+      "metric": "DKNG observations excluded",
+      "original_acquired": 0,
+      "original_liquidity_filtered": 0,
+      "final_research_dataset": 189,
+      "original_acquired_per_100k": NaN,
+      "original_liquidity_filtered_per_100k": NaN,
+      "final_research_dataset_per_100k": NaN
+    },
+    {
+      "metric": "Missing adjusted-close observations",
+      "original_acquired": 0,
+      "original_liquidity_filtered": 0,
+      "final_research_dataset": 0,
+      "original_acquired_per_100k": 0.0,
+      "original_liquidity_filtered_per_100k": 0.0,
+      "final_research_dataset_per_100k": 0.0
+    },
+    {
+      "metric": "Missing-volume observations",
+      "original_acquired": 0,
+      "original_liquidity_filtered": 0,
+      "final_research_dataset": 0,
+      "original_acquired_per_100k": 0.0,
+      "original_liquidity_filtered_per_100k": 0.0,
+      "final_research_dataset_per_100k": 0.0
+    },
+    {
+      "metric": "Zero-volume observations",
+      "original_acquired": 138694,
+      "original_liquidity_filtered": 900,
+      "final_research_dataset": 16,
+      "original_acquired_per_100k": 1957.1469292489703,
+      "original_liquidity_filtered_per_100k": 75.75846853414097,
+      "final_research_dataset_per_100k": 1.3488495998974874
+    },
+    {
+      "metric": "Extreme-volume observations",
+      "original_acquired": 33544,
+      "original_liquidity_filtered": 282,
+      "final_research_dataset": 235,
+      "original_acquired_per_100k": 473.3480654875299,
+      "original_liquidity_filtered_per_100k": 23.73765347403084,
+      "final_research_dataset_per_100k": 19.811228498494348
+    },
+    {
+      "metric": "Extreme diagnostic-return observations",
+      "original_acquired": 5409,
+      "original_liquidity_filtered": 45,
+      "final_research_dataset": 45,
+      "original_acquired_per_100k": 76.32779889762847,
+      "original_liquidity_filtered_per_100k": 3.787923426707049,
+      "final_research_dataset_per_100k": 3.7936394997116833
+    },
+    {
+      "metric": "Nonpositive adjusted-price observations",
+      "original_acquired": 4,
+      "original_liquidity_filtered": 0,
+      "final_research_dataset": 0,
+      "original_acquired_per_100k": 0.0564450352358132,
+      "original_liquidity_filtered_per_100k": 0.0,
+      "final_research_dataset_per_100k": 0.0
+    },
+    {
+      "metric": "Existing price-level case records",
+      "original_acquired": 73,
+      "original_liquidity_filtered": 0,
+      "final_research_dataset": 0,
+      "original_acquired_per_100k": 1.0301218930535918,
+      "original_liquidity_filtered_per_100k": 0.0,
+      "final_research_dataset_per_100k": 0.0
+    },
+    {
+      "metric": "Internal missing XNYS sessions",
+      "original_acquired": 4,
+      "original_liquidity_filtered": 0,
+      "final_research_dataset": 0,
+      "original_acquired_per_100k": 0.0564450352358132,
+      "original_liquidity_filtered_per_100k": 0.0,
+      "final_research_dataset_per_100k": 0.0
+    },
+    {
+      "metric": "Unresolved extreme-return discontinuities",
+      "original_acquired": 20,
+      "original_liquidity_filtered": 0,
+      "final_research_dataset": 0,
+      "original_acquired_per_100k": 0.2822251761790662,
+      "original_liquidity_filtered_per_100k": 0.0,
+      "final_research_dataset_per_100k": 0.0
+    },
+    {
+      "metric": "Corporate-action discrepancy records",
+      "original_acquired": 34,
+      "original_liquidity_filtered": 4,
+      "final_research_dataset": 4,
+      "original_acquired_per_100k": 0.4797827995044126,
+      "original_liquidity_filtered_per_100k": 0.3367043045961821,
+      "final_research_dataset_per_100k": 0.3372123999743718
+    },
+    {
+      "metric": "Quarantine-candidate rows/windows",
+      "original_acquired": 1386,
+      "original_liquidity_filtered": 2,
+      "final_research_dataset": 2,
+      "original_acquired_per_100k": 19.55820470920929,
+      "original_liquidity_filtered_per_100k": 0.168352152298091,
+      "final_research_dataset_per_100k": 0.1686061999871859
+    }
+  ],
+  "exclusions": [
+    {
+      "Ticker": "DKNG",
+      "Excluded": 189,
+      "First excluded": "2019-07-25",
+      "Last excluded": "2020-04-23",
+      "Retained": 1430,
+      "First retained": "2020-04-24",
+      "Last retained": "2025-12-31"
+    },
+    {
+      "Ticker": "FERG",
+      "Excluded": 1601,
+      "First excluded": "2016-01-04",
+      "Last excluded": "2022-05-11",
+      "Retained": 913,
+      "First retained": "2022-05-12",
+      "Last retained": "2025-12-31"
+    }
+  ],
+  "remaining_zero_by_security": [
+    {
+      "Ticker": "HUBB",
+      "Zero-volume rows": 1,
+      "First zero": "2017-09-01",
+      "Last zero": "2017-09-01",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "XEL",
+      "Zero-volume rows": 1,
+      "First zero": "2018-06-08",
+      "Last zero": "2018-06-08",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "CHD",
+      "Zero-volume rows": 1,
+      "First zero": "2019-12-31",
+      "Last zero": "2019-12-31",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "SBAC",
+      "Zero-volume rows": 1,
+      "First zero": "2017-01-17",
+      "Last zero": "2017-01-17",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "CCI",
+      "Zero-volume rows": 1,
+      "First zero": "2020-07-31",
+      "Last zero": "2020-07-31",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "CNC",
+      "Zero-volume rows": 1,
+      "First zero": "2020-02-26",
+      "Last zero": "2020-02-26",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "DXCM",
+      "Zero-volume rows": 1,
+      "First zero": "2016-07-21",
+      "Last zero": "2016-07-21",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "PFG",
+      "Zero-volume rows": 2,
+      "First zero": "2017-12-18",
+      "Last zero": "2018-06-08",
+      "Episodes": 2,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "WTW",
+      "Zero-volume rows": 1,
+      "First zero": "2016-01-06",
+      "Last zero": "2016-01-06",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "CELH",
+      "Zero-volume rows": 2,
+      "First zero": "2016-08-17",
+      "Last zero": "2016-09-02",
+      "Episodes": 2,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "IBKR",
+      "Zero-volume rows": 2,
+      "First zero": "2019-10-07",
+      "Last zero": "2019-10-08",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "YUMC",
+      "Zero-volume rows": 1,
+      "First zero": "2016-10-20",
+      "Last zero": "2016-10-20",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    },
+    {
+      "Ticker": "BKR",
+      "Zero-volume rows": 1,
+      "First zero": "2019-10-18",
+      "Last zero": "2019-10-18",
+      "Episodes": 1,
+      "Classification": "vendor_confirmed_market_unverified"
+    }
+  ],
+  "remaining_extreme_classifications": {
+    "retained_extreme_market_move": 44,
+    "same_day_dividend_adjustment": 1
+  },
+  "conditional_accuracy": {},
+  "protected_directory_hashes_sha256": {
+    "raw_yahoo": "50a24a0f8dbebf30271a9a45b6611416f7f687cabe86f15bb3d3cae92d3f7257",
+    "original_liquidity_filter": "fb641073d8c68870a3b8d563c22be6e5e6ff4c25304eaba1925ad73f27809549",
+    "original_anomaly_investigation": "d51382a49fea0792c3d5fc7a909702cabef60ee8d9f8979a929c80efcea83c34"
+  },
+  "source_data_modified": false
+}

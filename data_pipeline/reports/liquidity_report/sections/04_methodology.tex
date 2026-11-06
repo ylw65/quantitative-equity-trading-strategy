@@ -1,0 +1,52 @@
+\section{Liquidity Screening Methodology}
+
+\subsection{Measurement window and formula}
+
+The official XNYS calendar \citep{excal,nyse} identifies the final
+\LiquidityWindowSessions{}
+sessions of 2022, from \LiquidityWindowStart{} to \LiquidityWindowEnd{}. This
+interval omits weekends and the 26 December exchange holiday. For security
+\(i\) and observation date \(t\),
+
+\begin{equation}
+DV_{i,t}=P_{i,t}V_{i,t},
+\qquad
+\mathrm{ADTV20}_{i,2023}=\frac{1}{20}\sum_{t\in W_{2022}}DV_{i,t}.
+\end{equation}
+
+A row is valid only when its restored close is finite and strictly positive and
+its reported volume is finite and nonnegative. A valid zero-volume session
+contributes zero. A missing close, missing volume, missing vendor row, or
+invalid value makes that session invalid. The screen never fills an absent
+session with zero and never substitutes an earlier or later session.
+
+The security is selected only if all 20 sessions are valid and
+\(\mathrm{ADTV20}_{i,2023}\geq\LiquidityThreshold\). Fewer than 20 valid
+sessions produces the separate status
+\texttt{insufficient\_liquidity\_window\_data}; it is not classified as
+economically illiquid.
+
+\subsection{Selection flow}
+
+Table~\ref{tab:selection-flow} reconciles the full screening path. The
+denominator at each stage is explicit, so provider unavailability is not
+silently merged with failed liquidity selection.
+
+\begin{table}[tbp]
+\centering
+\caption{Fixed 2023 liquidity selection flow}
+\label{tab:selection-flow}
+\GeneratedTable{table_selection_flow}
+\begin{tablenotes}\small
+\item The final two stages intentionally have the same count: the fifth row
+identifies the construction of the full-history dataset, not an additional
+filter.
+\end{tablenotes}
+\end{table}
+
+\subsection{Point-in-time restriction}
+
+No 2023--2025 share volume enters the eligibility calculation. Prices and
+volumes are restricted to the 20 sessions in \(W_{2022}\). Future split
+metadata is used only to restore the historical price basis, as documented in
+Section~\ref{sec:price-volume}; it is not an economic selection input.

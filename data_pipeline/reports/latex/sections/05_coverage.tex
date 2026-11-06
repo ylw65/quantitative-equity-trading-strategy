@@ -1,0 +1,35 @@
+\section{Dataset Coverage and Completeness}
+
+Coverage is reported as a sequence of explicit counts: reconstructed universe,
+attempted Yahoo symbols, successful downloads, partial histories, empty or
+unavailable histories, and securities with fewer than 252 valid sessions.
+Observation counts and earliest/latest dates are summarized by year. A
+completion percentage is reported only where the denominator is defensible;
+otherwise the status is explicitly unknown.
+
+Exchange-calendar comparisons use \texttt{exchange\_calendars}
+\citep{excal,nyse}.
+
+\InputGenerated{generated/coverage_results.tex}
+
+\IfFileExists{generated/table_coverage_by_year.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Valid observations and coverage by calendar year.}
+    \label{tab:coverage_year}
+    \small
+    \input{generated/table_coverage_by_year.tex}
+  \end{table}
+}{\PendingResults{generated/table_coverage_by_year.tex}}
+
+\FigureGenerated{../figures/observations_by_year.pdf}
+  {Valid daily observations by calendar year, with structural calendar absences excluded.}
+  {fig:observations_year}
+
+\FigureGenerated{../figures/available_securities_by_year.pdf}
+  {Securities with at least one valid observation in each calendar year.}
+  {fig:available_year}
+
+\FigureGenerated{../figures/representative_histories.pdf}
+  {Adjusted-close and reported-volume histories for three representative Yahoo-acquired securities.}
+  {fig:representative_histories}

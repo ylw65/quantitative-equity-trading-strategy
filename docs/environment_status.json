@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "version": "core60_active40_ml_past_median_final_v1",
+  "securities": 486,
+  "max_loaded_date": "2022-12-30",
+  "data_directory": "data_current/adtv100m_2023_eligibility_v3_ohlc",
+  "dependency_count": 22,
+  "backtest_executed": false,
+  "ml_enabled": true,
+  "frozen2023_threshold": 0.43657775028548135,
+  "test_rows": 0
+}

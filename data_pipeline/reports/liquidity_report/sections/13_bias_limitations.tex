@@ -1,0 +1,51 @@
+\section{Selection Bias and Methodological Limitations}
+
+\subsection{Retrospective cohort selection}
+
+The cohort was defined using December 2022 liquidity and then applied to
+observations beginning in 2016. This is retrospective cohort selection:
+training-period observations are retained only for companies that would become
+highly liquid by January 2023. It differs from a year-by-year point-in-time
+universe that would allow liquidity to enter and exit the sample as trading
+activity changed.
+
+The resulting bias is potentially severe for studies of high-beta technology
+stocks and high-volume reversal. A fixed liquid cohort over-represents
+companies whose later success made them liquid and under-represents companies
+that were liquid earlier but declined, merged, or delisted before the screen.
+The survivorship and delisting-bias mechanisms are well documented in the
+financial data literature \citep{brown1992survivorship,shumway1997delisting}.
+All selected histories currently ending in 2025 reinforce this caveat; the
+observed no-trailing-gap result is not evidence that the cohort was free of
+survivorship selection.
+
+\subsection{Universe and provider limitations}
+
+Only \AcquiredSecurities{} of \UniverseSecurities{} SEC-derived securities
+have acquired histories. Yahoo Finance is not a complete historical listing
+database. Failed, renamed, delisted, or reused tickers can be missing or mapped
+ambiguously. The project therefore treats this as a verified partial universe,
+not a complete January 2023 census.
+
+Listing and delisting dates remain unresolved for most master rows. The report
+distinguishes leading observed-history gaps from exchange holidays and
+weekends, but it does not relabel every leading gap as pre-listing. Two raw
+placeholder intervals are corroborated by first valid observations; that is
+evidence, not a certified exchange listing date.
+
+\subsection{Vendor and corporate-action limitations}
+
+Restoring the historical split basis requires future split metadata. The rule
+is economically sensible for the intended price-volume multiplication, but it
+depends on the completeness of Yahoo's corporate-action records. The current
+policy does not guarantee that every reported volume was normalized between
+splits, nor does it validate every dividend adjustment. Four corporate-action
+case records remain subject to interpretation.
+
+\subsection{Scope exclusions}
+
+This supplement does not calculate final returns, create training features,
+construct a rolling liquidity filter, split the sample chronologically, fit an
+ML model, or run a backtest. Any extension to a rolling, point-in-time design
+must separate eligibility from outcome data and must supply verified listing
+and delisting information where available.

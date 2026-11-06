@@ -1,0 +1,6 @@
+
+The reconstruction identifies \IncludedSecurities{} verified common-equity securities from \AuditRows{} audited SEC cover rows. The complete exchange-listed denominator for 3 January 2023 remains unavailable, so the reconstruction is explicitly partial and no universe coverage percentage is claimed. Activision Blizzard remains represented through its 2023 symbol, demonstrating that the procedure is not restricted to current survivors.
+
+Yahoo Finance was the primary market-data route. The full verified master was attempted: \YahooSuccess{} securities produced usable histories and \YahooFailed{} remained unavailable or empty. The validated Yahoo base contains \Observations{} rows for \ObservedSecurities{} securities over \PriceStart{} to \PriceEnd{}.
+
+Within observed histories, the raw vendor audit records \MissingAdjClose{} missing adjusted-close rows and \MissingVolume{} missing volume rows. It also flags \NonPositivePrice{} non-positive adjusted closes, \NegativeVolume{} negative-volume rows, \ZeroVolume{} zero-volume rows, and \ExtremeReturns{} diagnostic returns beyond the 50\% review threshold. The vendor reports \SplitEvents{} split events and \DividendEvents{} dividend events; split continuity checks produce \SplitFlags{} flags. These observations are retained or flagged rather than treated as trading information.

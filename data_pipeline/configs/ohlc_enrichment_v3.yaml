@@ -1,0 +1,35 @@
+project:
+  name: adtv100m_2023_eligibility_v3_ohlc
+  parent_version: adtv100m_2023_eligibility_v3
+  ohlc_adjustment_convention: yahoo_auto_adjust_false_raw_ohlc_actions_repair_true
+  numeric_tolerance: 1.0e-8
+  relative_tolerance: 1.0e-10
+  close_adj_ratio_review_low: 0.01
+  close_adj_ratio_review_high: 100.0
+
+inputs:
+  v3_root: data/filtered/adtv100m_2023_eligibility_v3
+  selected_daily: data/filtered/adtv100m_2023_eligibility_v3/selected_equity_daily.parquet
+  selected_master: data/filtered/adtv100m_2023_eligibility_v3/selected_security_master.parquet
+  diagnostic_returns: data/filtered/adtv100m_2023_eligibility_v3/diagnostic_returns.parquet
+  standardized_raw: data/validated/standardized_raw.parquet
+  download_manifest: data/metadata/download_manifest.csv
+
+outputs:
+  root: data/filtered/adtv100m_2023_eligibility_v3_ohlc
+
+exclusions:
+  security_ids:
+    - SEC:0000048898
+  reason: User-directed removal of the complete HUBB security after the parent v3 OHLC audit identified a retained OHLC consistency defect.
+  policy_type: user_directed_security_exclusion
+  decision_date: "2026-11-04"
+
+research_constraints:
+  targeted_yahoo_downloads_allowed_if_needed: true
+  modify_source_data: false
+  calculate_final_returns: false
+  strategy_features: false
+  chronological_split: false
+  model_training: false
+  backtesting: false

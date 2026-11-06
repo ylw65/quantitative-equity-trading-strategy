@@ -1,0 +1,34 @@
+\section{Original Dataset and Security Universe}
+
+\subsection{Historical universe}
+
+The source master contains \UniverseSecurities{} included rows reconstructed
+from SEC filings and historical exchange evidence. It is a best-effort
+historical universe rather than a claim of complete 3 January 2023 coverage.
+\citep{secsubmissions,seccompanytickers,nasdaqtrader}
+The listed-company source may have missed securities with incomplete SEC
+identity evidence, unresolved ticker changes, or no accessible historical
+mapping. Existing universe issues and provenance remain the authoritative
+record of those limitations.
+
+Yahoo Finance histories \citep{yfinance,yahoofinance} are available for
+\AcquiredSecurities{} securities.
+The original validated panel contains \OriginalValidatedObservations{}
+stock-day observations across those histories. The difference between the
+master and the acquired set reflects provider availability, unresolved symbol
+mapping, delistings, and failed or unavailable downloads; it is not evidence
+that the missing securities did not exist in 2023.
+
+\subsection{Research-base contract}
+
+The selected output preserves the research-facing daily fields
+\texttt{date}, \texttt{security\_id}, \texttt{ticker}, \texttt{volume},
+\texttt{adj\_close}, and \texttt{pct\_return}. The selected base is restricted
+to the \SelectedSecurities{} eligible IDs but otherwise retains every available
+validated row from 2016 through 2025. Duplicate security-date keys are rejected,
+and \texttt{pct\_return} is null throughout.
+
+The raw selected-cohort archive is retained separately. Its
+\RawSelectedRows{} rows reconcile to the validated base after excluding
+\PlaceholderRows{} all-NaN placeholder rows. Raw price fields and corporate
+actions are not overwritten by the filtered research base.

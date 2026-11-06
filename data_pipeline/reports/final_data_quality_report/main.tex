@@ -1,0 +1,102 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.35cm,headheight=22pt]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{Navy}{HTML}{19324D}
+\definecolor{Slate}{HTML}{566573}
+\definecolor{SoftBG}{HTML}{F3F6F7}
+\definecolor{SoftRule}{HTML}{8FA3B0}
+\graphicspath{{../figures/final_quality/}}
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\renewcommand{\arraystretch}{1.14}
+\bibliographystyle{plainnat}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{Slate}US Equity Research Dataset}
+\fancyhead[R]{\small\color{Slate}Final eligibility v2}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{SoftRule}\leaders\hrule height \headrulewidth\hfill}}
+\titleformat{\section}{\Large\bfseries\color{Navy}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\large\bfseries\color{Navy}}{\thesubsection}{0.7em}{}
+\newcommand{\GeneratedInput}[1]{\input{generated/#1.tex}}
+\newcommand{\GeneratedFigure}[3]{%
+  \begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{#1}
+    \caption{#2}
+    \label{#3}
+  \end{figure}}
+\newcommand{\GeneratedFigureH}[3]{%
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{#1}
+    \caption{#2}
+    \label{#3}
+  \end{figure}}
+\newcommand{\GeneratedTable}[1]{\adjustbox{max width=\linewidth}{\input{generated/#1.tex}}}
+\GeneratedInput{macros}
+
+\title{\color{Navy}\textbf{Liquidity-Based Universe Selection and\\
+Final Data Quality Assessment}}
+\author{DSA5205 Project Team}
+\date{Final research snapshot generated 28 October 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+This report updates the fixed USD 100 million ADTV20 cohort with two historical
+eligibility boundaries. FERG begins on 12 May 2022 under the primary-NYSE
+listing policy, and DKNG begins on 24 April 2020 after the predecessor SPAC
+period. The \FinalSecurities{} selected identities and \FinalIssuers{} SEC
+issuers remain unchanged. The final validated panel contains
+\FinalObservations{} stock-days after excluding \FergExcluded{} FERG and
+\DkngExcluded{} DKNG observations. Remaining zero-volume and extreme-value
+observations are retained with explicit unresolved-cause and evidence flags.
+\end{abstract}
+\begin{center}
+\fcolorbox{SoftRule}{SoftBG}{%
+\begin{minipage}{0.94\linewidth}\raggedright
+\small\textbf{Final snapshot contract.} All empirical quantities in this
+report come from \texttt{data/filtered/adtv100m\_\allowbreak{}2023\_\allowbreak{}eligibility\_\allowbreak{}v2 and reports/final\_\allowbreak{}data\_\allowbreak{}quality\_\allowbreak{}report/generated/report\_\allowbreak{}statistics.json}. Earlier source archives are
+hash-protected and remain unchanged.
+\end{minipage}}
+\end{center}
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+\input{sections/01_summary}
+\input{sections/02_scope}
+\input{sections/03_universe}
+\input{sections/04_eligibility}
+\input{sections/05_final_dataset}
+\input{sections/06_zero_volume}
+\input{sections/07_extremes}
+\input{sections/08_comparison}
+\input{sections/09_treatments}
+\input{sections/10_limitations}
+\input{sections/11_conclusions}
+\appendix
+\input{sections/A_data_dictionary}
+\input{sections/A_reproduction}
+\bibliography{../latex/references}
+\end{document}

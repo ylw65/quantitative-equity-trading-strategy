@@ -1,0 +1,26 @@
+\section{Extreme Price and Return Diagnostics}
+
+Diagnostic returns are computed only for audit and are not copied into the
+research base. The selected cohort has \ExtremeReturns{} adjusted-close
+diagnostic returns exceeding absolute 50 percent across
+\ExtremeReturnSecurities{} securities. All have an evidence classification:
+\RetainedExtremeMarketMoves{} are retained extreme market moves and
+\SameDayDividendAdjustmentCases{} coincides with a same-day dividend adjustment.
+The unresolved count is \UnresolvedExtremeCases{}.
+
+No selected security appears in the prior extreme-price-level case file.
+Extreme observations are nevertheless retained. Statistical extremity is not a
+sufficient deletion rule, and some genuine market shocks are economically
+important. Conversely, the absence of unresolved cases in this cohort does not
+prove that every vendor price is correct; it records that no selected record
+retains the prior audit's unresolved-discontinuity label.
+
+\begin{table}[tbp]
+\centering
+\caption{Extreme diagnostic-return classifications after filtering}
+\label{tab:extreme-classes}
+\GeneratedTable{table_extreme_classes}
+\end{table}
+
+\GeneratedFigure{liquidity_extreme_classes.pdf}{Extreme diagnostic-return rows
+by retained evidence classification. The categories are not trading signals.}{fig:extreme-classes}

@@ -1,0 +1,25 @@
+\section{Ticker Changes, Delistings, and Survivorship Bias}
+
+Reference-date membership is independent of current listing status. Securities
+that later merged, delisted, liquidated, or changed symbol remain eligible when
+their 3 January 2023 common-equity status is supported. Reused tickers are
+linked through stable identifiers where possible and flagged as ambiguous
+otherwise.
+
+\InputGenerated{generated/identity_bias_results.tex}
+
+\IfFileExists{generated/table_identity_issues.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Identity and historical-listing issues by severity.}
+    \label{tab:identity_issues}
+    \small
+    \input{generated/table_identity_issues.tex}
+  \end{table}
+}{\PendingResults{generated/table_identity_issues.tex}}
+
+The direction of survivorship bias cannot be inferred solely from the share of
+surviving firms. It depends on the return histories omitted, the missingness
+mechanism, and the eventual research estimator \citep{brown1992survivorship}.
+Accordingly, incomplete coverage is reported as a limitation rather than
+corrected through undocumented imputation.

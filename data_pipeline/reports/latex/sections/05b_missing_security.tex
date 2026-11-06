@@ -1,0 +1,54 @@
+\section{Missing-Security and Unavailable-History Analysis}
+
+The manifest contains one outcome for every verified security. Yahoo returned
+usable history for \YahooSuccess{} and no usable history for
+\UnavailableSecurities{}, an unavailable share of \UnavailableShare{}. A Yahoo
+miss is not treated as a delisting determination.
+
+\IfFileExists{generated/table_missing_failure_categories.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Failure evidence categories for unavailable Yahoo histories.}
+    \label{tab:missing_failure_categories}
+    \small
+    \input{generated/table_missing_failure_categories.tex}
+  \end{table}
+}{\PendingResults{generated/table_missing_failure_categories.tex}}
+
+The missing cohort is descriptively non-random. In particular, failure is
+concentrated among securities without a current exact SEC ticker and those with
+SEC-evidenced ticker changes. These are rates within reported metadata cohorts,
+not estimates for the unknown complete listed population.
+
+\IfFileExists{generated/table_missing_cohort.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Acquired and unavailable histories by exchange, security category,
+    and current-ticker evidence.}
+    \label{tab:missing_cohort}
+    \small
+    \resizebox{\linewidth}{!}{\input{generated/table_missing_cohort.tex}}
+  \end{table}
+}{\PendingResults{generated/table_missing_cohort.tex}}
+
+\FigureGenerated{../figures/investigation/missing_failure_categories.pdf}
+  {Evidence categories for unavailable Yahoo histories.}
+  {fig:missing_failure_categories}
+
+\FigureGenerated{../figures/investigation/missing_by_exchange_type.pdf}
+  {Unavailable-history rates by exchange and security category.}
+  {fig:missing_exchange_type}
+
+\textbf{Targeted recovery.} The SEC evidence identifies
+\SafeAliasCandidates{} securities with a single later-symbol candidate,
+\AmbiguousAliasCandidates{} with multiple or ambiguous candidates, and
+\MissingNoAlias{} with no later-symbol evidence. A bounded probe of
+\ProbeAttempts{} unambiguous aliases found vendor data for \ProbeFound{}, but
+none were admitted to the primary dataset because security continuity across
+the alias transition must first be established.
+
+\textbf{Conclusion.} Missingness can materially alter later samples of renamed,
+delisted, merged, or security-class-heavy issuers. The acquired Yahoo panel must
+not be described as representative. Targeted recovery is feasible, but a broad
+automatic alias substitution would risk assigning unrelated or preferred
+security histories.

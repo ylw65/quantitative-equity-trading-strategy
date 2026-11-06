@@ -1,0 +1,27 @@
+\section{Securities Retained and Excluded}
+
+The screen has mutually exclusive outcomes for every acquired security.
+\BelowThreshold{} have a complete valid window below the threshold, and
+\InsufficientWindow{} do not provide 20 valid sessions. The latter category
+remains a data-availability result, not a finding of zero liquidity. The
+\NotAcquired{} securities outside the acquired set remain explicitly visible
+in \texttt{liquidity\_screen\_all.csv} and are not silently dropped.
+
+\begin{table}[tbp]
+\centering
+\caption{Composition before and after screening}
+\label{tab:composition}
+\GeneratedTable{table_composition}
+\end{table}
+
+NYSE and Nasdaq dominate both the acquired and selected cohorts. The selected
+composition includes both \texttt{common\_stock} and
+\texttt{common\_equity\_class} records. No selected security has the existing
+\texttt{reit\_common\_stock} type, although REITs remain eligible under the
+project's common-equity definition rather than being excluded by the liquidity
+screen. Multiple share classes are retained when they are distinct security
+identities.
+
+\GeneratedFigure{liquidity_composition.pdf}{Acquired and selected securities by
+exchange and security type. Counts are security identities, not issuer
+identities.}{fig:composition}

@@ -1,0 +1,81 @@
+{
+  "generated_at_utc": "2026-10-26T16:58:11+00:00",
+  "snapshot": {
+    "selected_securities": 488,
+    "selected_distinct_issuers": 486,
+    "validated_rows": 1187986,
+    "universe_securities": 4874,
+    "acquired_securities": 3239,
+    "complete_window_securities": 3203,
+    "below_threshold": 2715,
+    "insufficient_window": 36,
+    "not_acquired": 1635,
+    "unresolved_price_volume": 0,
+    "window_sessions": [
+      "2022-12-02",
+      "2022-12-05",
+      "2022-12-06",
+      "2022-12-07",
+      "2022-12-08",
+      "2022-12-09",
+      "2022-12-12",
+      "2022-12-13",
+      "2022-12-14",
+      "2022-12-15",
+      "2022-12-16",
+      "2022-12-19",
+      "2022-12-20",
+      "2022-12-21",
+      "2022-12-22",
+      "2022-12-23",
+      "2022-12-27",
+      "2022-12-28",
+      "2022-12-29",
+      "2022-12-30"
+    ],
+    "threshold_usd_inclusive": 100000000.0,
+    "selected_adtv20_usd": {
+      "minimum": 101004492.8173828,
+      "median": 226731021.98766708,
+      "maximum": 69010669336.25507
+    }
+  },
+  "integrity": {
+    "raw_rows": 1190496,
+    "placeholder_all_nan_rows": 2510,
+    "missing_adj_close_rows": 2510,
+    "missing_volume_rows": 2510,
+    "missing_value_intervals": 4,
+    "incomplete_history_securities": 49,
+    "internal_calendar_gaps": 0,
+    "zero_volume_rows": 900,
+    "extreme_return_rows": 45,
+    "unresolved_extreme_cases": 0,
+    "multi_security_issuers": 2,
+    "identity_review_candidates": 2,
+    "identity_review_candidate_tickers": [
+      "ABNB",
+      "AFRM"
+    ],
+    "protected_inputs_unchanged": true
+  },
+  "anomalies": {
+    "zero_volume_securities": 15,
+    "prolonged_zero_volume_securities": 0,
+    "extreme_return_securities": 20,
+    "extreme_volume_spikes": 282,
+    "extreme_volume_spike_securities": 119,
+    "quarantine_rows_windows": 2,
+    "corporate_actions": {
+      "split_events": 136,
+      "dividend_events": 13277,
+      "split_continuity_flags": 0,
+      "dividend_continuity_flags": 3,
+      "simultaneous_split_distribution_groups": 1,
+      "simultaneous_split_distribution_events": 1,
+      "split_reconciliation_events": 1,
+      "dividend_reconciliation_events": 3,
+      "ordinary_dividend_unresolved": 1
+    }
+  }
+}

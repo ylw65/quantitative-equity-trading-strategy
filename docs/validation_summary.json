@@ -1,0 +1,33 @@
+{
+  "strategy_environment": "fresh isolated Python 3.13; exact 22-package lock; pip check passed",
+  "cleaning_environment": "fresh isolated Python 3.13; data_pipeline/environment-lock.txt; pip check passed",
+  "local_strategy_tests": {
+    "passed": 20,
+    "skipped": 0
+  },
+  "source_package_strategy_tests": {
+    "passed": 18,
+    "skipped_snapshot_assertions": 2
+  },
+  "cleaning_tests": {
+    "passed": 68,
+    "skipped_missing_historical_artifacts": 25,
+    "skipped_missing_liquidity_outputs": 4
+  },
+  "synthetic_validation_fixture": {
+    "securities": 10,
+    "validated_rows": 24048,
+    "recorded_issues": 7,
+    "is_market_data": false
+  },
+  "snapshot_files_sha256_verified": 10,
+  "reference_scenarios_reproduced": 15,
+  "training_labels_rebuilt": 12990,
+  "frozen_2023_model_reproduced": true,
+  "strategy_test_rows_materialised": 243972,
+  "validation_is_exposed_development": true,
+  "raw_historical_rebuild_executed": false,
+  "new_vendor_downloads": 0,
+  "test_evaluated": true,
+  "test_refit": false
+}

@@ -1,0 +1,39 @@
+{
+  "version": "core60_active40_ml_past_median_final_v1",
+  "files": {
+    "entry_2023.joblib": "81cef4a3e4eb733ce1e1acbedb2e3be32d5f26adf6d447878b178189d9c5c33d",
+    "universe_2023.csv": "bf44ce648ce00f33222abccbbb3f0bcb0a39829a03b89ed4e9b88b8214284223"
+  },
+  "classifier": "logistic_noage C=0.1; sigmoid calibration C=10 on past out-of-fit predictions",
+  "features": [
+    "ret1",
+    "ret5",
+    "ret20",
+    "rv",
+    "clv",
+    "range",
+    "vol20",
+    "vol_ratio",
+    "low_distance",
+    "relative5",
+    "market5",
+    "market20",
+    "breadth",
+    "event_rv",
+    "event_ret",
+    "event_score",
+    "event_low_distance"
+  ],
+  "training_history": "2016–2022",
+  "completed_trade_labels": 12990,
+  "latest_model_label": "2022-12-30",
+  "calibration_rows": 11503,
+  "entry_quantile": 0.5,
+  "frozen2023_threshold": 0.43657775028548135,
+  "primary_validation_universe": 474,
+  "sensitivity_universe": 486,
+  "validation_status": "EXPOSED_DEVELOPMENT_NOT_INDEPENDENT",
+  "test_2024_2025_read": false,
+  "source_research_model_sha256": "81cef4a3e4eb733ce1e1acbedb2e3be32d5f26adf6d447878b178189d9c5c33d",
+  "strategy_config_sha256": "027a3f325bb21a91246496725f73a6872d507903d77e96bdb98ec8d568292f14"
+}

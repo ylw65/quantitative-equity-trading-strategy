@@ -1,0 +1,12 @@
+\begin{tabular}{@{}p{0.16\linewidth}p{0.18\linewidth}p{0.27\linewidth}p{0.27\linewidth}@{}}
+\toprule
+Issue & Status & Conclusion & Remaining uncertainty \\
+\midrule
+P0.1 Provenance and abstract & resolved & Yahoo is authoritative; EODHD is outside the base; abstract is generated. & None for provider attribution. \\
+P0.2 Identity and 2025 coverage & resolved & All checkpoints pass mapping/schema tests; no duplicate histories. & 12 trailing zero-volume candidates are retained for review. \\
+P1.1 Missing histories & partially\_\allowbreak{}resolved & 1,635 failures categorized; 291 safe alias candidates identified. & Alias histories require identity continuity checks. \\
+P1.2 Extreme prices and returns & partially\_\allowbreak{}resolved & 1,244 near-zero denominators and reverse-split levels are separated from market moves. & 20 unresolved discontinuities need independent quote evidence. \\
+P1.3 Volume quality & partially\_\allowbreak{}resolved & 138,694 zero-volume rows are concentrated; split-volume normalization is not established. & Illiquidity, suspensions, and stale rows remain observationally equivalent. \\
+P1.4 Corporate actions & partially\_\allowbreak{}resolved & 3 original split flags are combined actions; no simple split failures remain. & Yahoo lacks structured event-type labels for most distributions. \\
+\bottomrule
+\end{tabular}

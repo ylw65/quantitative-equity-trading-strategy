@@ -1,0 +1,22 @@
+\section{Reproduction Instructions}
+
+\InputGenerated{generated/reproduction_commands.tex}
+
+The P0/P1 investigation layer can be regenerated independently from the
+preserved raw checkpoints and validated audit tables:
+
+\begin{verbatim}
+python scripts/run_identity_temporal.py
+python scripts/run_missing_analysis.py
+python scripts/investigate_volume.py
+python scripts/run_anomaly_investigation.py
+python scripts/run_eda.py
+python scripts/check_report_consistency.py
+python scripts/integrate_investigations.py
+python -m pytest -q
+\end{verbatim}
+
+All commands are intended to run from the repository root. Generated raw market
+data, validated data, figures, tables, and LaTeX auxiliary files are excluded
+from version control. Acquisition can resume from per-security checkpoints;
+raw files and failure records are preserved across retries.

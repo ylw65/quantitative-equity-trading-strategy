@@ -1,0 +1,59 @@
+\section{Extreme Observations and Potential Errors}
+
+Diagnostic percentage returns are calculated only to identify discontinuities.
+They do not enter the finalized research base as model features, labels, or
+transformed variables. Extreme returns remain in the raw and standardized
+audit data unless a documented, security-specific correction is later approved.
+An extreme observation is flagged, not presumed erroneous.
+
+\InputGenerated{generated/extreme_results.tex}
+
+The independent anomaly audit reproduces \ExtremeReturnRows{} threshold
+crossings. \NearZeroReturns{} involve a previous adjusted price at or below one
+cent, making percentage returns economically unstable; \RetainedExtremes{} are
+classified as retained extreme market moves, and \UnresolvedExtremes{} remain
+unexplained large discontinuities.
+
+\IfFileExists{generated/table_anomaly_return_classes.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Diagnostic extreme-return evidence classifications.}
+    \label{tab:anomaly_return_classes}
+    \small
+    \input{generated/table_anomaly_return_classes.tex}
+  \end{table}
+}{\PendingResults{generated/table_anomaly_return_classes.tex}}
+
+\FigureGenerated{../figures/investigation/anomaly_extreme_return_categories.pdf}
+  {Classification of extreme diagnostic returns by evidence type.}
+  {fig:anomaly_return_categories}
+
+\FigureGenerated{../figures/investigation/anomaly_extreme_price_levels.pdf}
+  {Extreme adjusted-price levels and reverse-split evidence.}
+  {fig:anomaly_price_levels}
+
+\textbf{Interpretation.} Extremely large adjusted-price levels can be
+arithmetically consistent with repeated reverse-split back-adjustment while
+remaining unsuitable for level-based transformations. Raw observations are
+retained. The analysis-quarantine register contains \QuarantineRows{} rows or
+windows across \QuarantineSecurities{} securities for return or level-based
+diagnostics; it does not modify the research base or define strategy
+eligibility.
+
+\FigureGenerated{../figures/adjusted_close_distribution.pdf}
+  {Distribution of positive adjusted close values on a logarithmic scale.}
+  {fig:adj_close_distribution}
+
+\FigureGenerated{../figures/diagnostic_returns_tail.pdf}
+  {Observed diagnostic-return distribution with the 50 percent review thresholds; returns are not a finalized feature.}
+  {fig:diagnostic_tail}
+
+\IfFileExists{generated/table_extreme_returns.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Leading diagnostic return discontinuities requiring review.}
+    \label{tab:extreme_returns}
+    \small
+    \input{generated/table_extreme_returns.tex}
+  \end{table}
+}{\PendingResults{generated/table_extreme_returns.tex}}

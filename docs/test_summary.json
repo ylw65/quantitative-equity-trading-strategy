@@ -1,0 +1,87 @@
+{
+  "version": "core60_active40_ml_past_median_final_v1",
+  "period": [
+    "2024-01-01",
+    "2025-12-31"
+  ],
+  "market_end": "2025-12-31 00:00:00",
+  "fit_on2023_or_test": false,
+  "model_latest_label": "2022-12-30 00:00:00",
+  "model_policy": "Use unchanged frozen 2023 classifier, preprocessing, calibration and median threshold throughout both test years. No fitting on 2023, 2024 or 2025.",
+  "threshold": 0.43657775028548135,
+  "test_market_rows": 243972,
+  "results": [
+    {
+      "cohort": "primary474",
+      "fee": 0.002,
+      "annual_return": 0.12296652701433564,
+      "volatility": 0.12684293897745422,
+      "sharpe": 0.977516637224285,
+      "max_drawdown": -0.15383609347904237,
+      "total_return": 0.25989364615364186,
+      "average_stock": 0.7037373847471959,
+      "cost": 15431.855508511968,
+      "active_post_gap_cap_breach": 0.015466646812942686
+    },
+    {
+      "cohort": "primary474",
+      "fee": 0.001,
+      "annual_return": 0.1269276860173647,
+      "volatility": 0.12669636000063794,
+      "sharpe": 1.006303610261036,
+      "max_drawdown": -0.152748255877022,
+      "total_return": 0.2687621782639231,
+      "average_stock": 0.7024344971962316,
+      "cost": 7779.415400626603,
+      "active_post_gap_cap_breach": 0.015465453706258597
+    },
+    {
+      "cohort": "primary474",
+      "fee": 0.003,
+      "annual_return": 0.11905381998683762,
+      "volatility": 0.12699119389663907,
+      "sharpe": 0.949028888873832,
+      "max_drawdown": -0.15524775038487393,
+      "total_return": 0.2511640061927145,
+      "average_stock": 0.7050366350423761,
+      "cost": 22959.54567632242,
+      "active_post_gap_cap_breach": 0.015467839973759709
+    },
+    {
+      "cohort": "delivered486",
+      "fee": 0.002,
+      "annual_return": 0.12089951710133451,
+      "volatility": 0.12796218181897576,
+      "sharpe": 0.9556679359676593,
+      "max_drawdown": -0.15703524176467254,
+      "total_return": 0.25527817433853217,
+      "average_stock": 0.7046161064420653,
+      "cost": 15195.99889826731,
+      "active_post_gap_cap_breach": 0.015466646812942686
+    },
+    {
+      "cohort": "delivered486",
+      "fee": 0.001,
+      "annual_return": 0.12478186155708415,
+      "volatility": 0.12780879156733874,
+      "sharpe": 0.9837243237954999,
+      "max_drawdown": -0.15562255804204395,
+      "total_return": 0.26395410418037324,
+      "average_stock": 0.7032875980266233,
+      "cost": 7659.964220074278,
+      "active_post_gap_cap_breach": 0.015465453706258597
+    },
+    {
+      "cohort": "delivered486",
+      "fee": 0.003,
+      "annual_return": 0.11706450818051684,
+      "volatility": 0.12811718146479026,
+      "sharpe": 0.9279064406676792,
+      "max_drawdown": -0.15843318904537507,
+      "total_return": 0.24673724411870546,
+      "average_stock": 0.7059407273450137,
+      "cost": 22610.27820196279,
+      "active_post_gap_cap_breach": 0.015467839973759709
+    }
+  ]
+}

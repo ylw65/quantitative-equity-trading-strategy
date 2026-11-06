@@ -1,0 +1,53 @@
+\section{Trading Volume Quality Assessment}
+
+Volume checks cover missing values, negative values, zero-volume sessions,
+extreme spikes, distributional tails, and discontinuities around stock splits.
+The analysis distinguishes reported share volume from dollar trading volume.
+It does not construct ADV20, relative-volume indicators, or other
+strategy-specific features.
+
+\InputGenerated{generated/volume_results.tex}
+
+The audit finds \ZeroVolumeRows{} zero-volume rows across
+\ZeroVolumeSecurities{} securities; half occur in the first
+\ZeroHalfSecurities{} ranked securities. \ProlongedZeroCases{} securities meet
+the descriptive prolonged-case screen. Zero volume is retained as zero and may
+represent illiquidity, suspension, an inactive vendor row, or another
+unresolved condition.
+
+\IfFileExists{generated/table_volume_investigation_by_year.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Zero-volume incidence and concentration by year.}
+    \label{tab:volume_zero_year}
+    \small
+    \resizebox{\linewidth}{!}{\input{generated/table_volume_investigation_by_year.tex}}
+  \end{table}
+}{\PendingResults{generated/table_volume_investigation_by_year.tex}}
+
+\FigureGenerated{../figures/investigation/volume_zero_concentration.pdf}
+  {Cumulative concentration of zero-volume observations across securities.}
+  {fig:volume_zero_concentration}
+
+\FigureGenerated{../figures/investigation/volume_split_relationship.pdf}
+  {Event-volume ratios relative to reported split factors.}
+  {fig:volume_split_relationship}
+
+For \SplitVolumeEvents{} split events with measurable neighboring volume, the
+data do not establish a single historical share-volume normalization
+convention. Reported share volume is therefore retained without a split
+transformation.
+
+\FigureGenerated{../figures/volume_distribution_log.pdf}
+  {Distribution of positive daily reported share volume on a logarithmic scale.}
+  {fig:volume_distribution}
+
+\IfFileExists{generated/table_volume_flags.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Volume quality flags and unresolved counts.}
+    \label{tab:volume_flags}
+    \small
+    \input{generated/table_volume_flags.tex}
+  \end{table}
+}{\PendingResults{generated/table_volume_flags.tex}}

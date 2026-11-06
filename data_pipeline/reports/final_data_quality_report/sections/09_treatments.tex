@@ -1,0 +1,20 @@
+\section{Final Data-Treatment Decisions}
+
+The policy distinguishes historical eligibility, economic continuity, vendor
+fidelity, numerical validity, and execution eligibility. Removing a predecessor
+period does not prove that its observations were numerically invalid, and
+retaining a Yahoo observation does not imply that an executable trade occurred
+at the recorded price.
+
+\begin{table}[H]
+\centering
+\caption{Final cleaning and retention decisions}
+\label{tab:treatments}
+\small
+\GeneratedTable{table_treatments}
+\end{table}
+
+Unresolved non-volume problems remain visible. The selected cohort retains one
+ordinary-dividend adjustment mismatch, one OHLC consistency issue, two identity
+review candidates, and all 16 remaining zero-volume observations with
+unverified market causes.

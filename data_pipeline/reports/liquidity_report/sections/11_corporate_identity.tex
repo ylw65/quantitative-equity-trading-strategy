@@ -1,0 +1,56 @@
+\section{Corporate Actions and Security Identity}
+
+\subsection{Corporate actions}
+
+The selected quality records count \SplitEvents{} stock splits and
+\DividendEvents{} dividend or distribution events. The reconciliation evidence
+contains \CorporateActionCaseRecords{} case records requiring classification.
+They comprise probable special distributions or spin-offs, one simultaneous
+split and distribution, and one ordinary-dividend adjustment mismatch. These
+are interpretation records, not automatic data exclusions.
+
+\begin{table}[H]
+\centering
+\caption{Corporate-action evidence retained after filtering}
+\label{tab:corporate-actions}
+\GeneratedTable{table_corporate_actions}
+\end{table}
+
+Split-continuity flags are zero in the selected cohort. Dividend-continuity
+flags are not zero, and the unresolved ordinary-dividend adjustment mismatch is
+retained for review. The current price-volume policy uses nominal close only
+for liquidity screening; it does not redefine the research base's
+\texttt{adj\_close} field or silently repair vendor price history.
+
+\subsection{Issuer and identity checks}
+
+The \SelectedSecurities{} selected identities map to \SelectedIssuers{}
+distinct SEC issuers. Two issuers have multiple selected share classes:
+Berkshire Hathaway (BRK-A and BRK-B) and Alphabet (GOOG and GOOGL). Multiple
+security IDs are retained because companies can expose economically distinct
+listed claims; no security is deleted merely to force issuer uniqueness.
+
+\begin{table}[H]
+\centering
+\caption{Selected issuers with multiple security identities}
+\label{tab:multi-issuer}
+\GeneratedTable{table_multi_issuers}
+\end{table}
+
+\IdentityReviewCandidates{} selected identities have an existing identity
+review action. Both are flagged \texttt{base\_rows\_only}, not confirmed
+cross-ticker contamination. Their issue is the same all-NaN placeholder
+pattern documented above. The label was deliberately corrected from an earlier
+candidate metric name so the report does not overstate the evidence.
+\begin{table}[H]
+\centering
+\caption{Selected identity review candidates}
+\label{tab:identity-review}
+\GeneratedTable{table_identity_candidates}
+\end{table}
+
+Security-date keys are unique in the selected base. The audit finds no exact
+duplicate history tied to the selected security IDs and does not merge share
+classes. The \QuarantineRowsWindows{} analysis-quarantine rows or windows in
+the selected cohort coincide with the two review candidates and should be
+understood with the same limitation.

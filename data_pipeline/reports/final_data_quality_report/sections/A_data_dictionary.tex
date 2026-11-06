@@ -1,0 +1,18 @@
+\section{Data Dictionary}
+
+\begin{longtable}{@{}p{0.40\linewidth}p{0.51\linewidth}@{}}
+\toprule
+Artifact or field & Definition \\
+\midrule
+\endhead
+\path{historical_eligibility_policy.csv} & Inclusive, security-ID-specific eligibility boundaries and provenance. \\
+\path{selected_equity_daily.parquet} & Final research-facing daily fields after historical exclusions. \\
+\path{selected_security_master.parquet} & Fixed 488-security master with the applied historical policy metadata. \\
+\path{historical_exclusions.csv} & Every excluded observation and its original raw source file. \\
+\path{diagnostic_returns.parquet} & Recomputed audit-only returns and existing diagnostic flags. \\
+\path{remaining_zero_volume_cases.csv} & Retained zero-volume observations and strict episode IDs. \\
+\path{remaining_extreme_value_cases.csv} & Retained volume, price, and return extremes with evidence fields. \\
+\path{final_data_quality_summary.csv} & Independently recomputed comparison metrics for all three scopes. \\
+\path{cleaning_policy.json} & Final treatments, source evidence, policy, software versions, and input hashes. \\
+\bottomrule
+\end{longtable}

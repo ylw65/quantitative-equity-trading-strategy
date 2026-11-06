@@ -1,0 +1,25 @@
+\section{Zero-Volume Investigation}
+
+Yahoo reports zero for \OriginalZeroVolumeRows{} observations in the original
+ADTV-filtered cohort. The FERG boundary removes 838 such observations; the
+DKNG boundary removes 46. The final panel retains \FinalZeroVolumeRows{}
+zero-volume observations across \FinalZeroVolumeSecurities{} securities,
+grouped into \FinalZeroVolumeEpisodes{} strict XNYS-session episodes. The
+longest remaining episode lasts \FinalZeroVolumeLongest{} trading sessions.
+
+These are source-fidelity observations: the vendor value is zero and is not
+missing. The market-level causes are not independently verified, so the
+classification remains \path{vendor_confirmed_market_unverified}. Zero has
+not been converted to null and a missing session has not been converted to
+zero.
+
+\GeneratedFigureH{remaining_zero_volume_by_security.pdf}{Remaining
+zero-volume observations after the FERG and DKNG history corrections.}{fig:remaining-zero}
+
+\begin{table}[H]
+\centering
+\caption{Remaining zero-volume observations by security}
+\label{tab:remaining-zero}
+\scriptsize
+\GeneratedTable{table_remaining_zero}
+\end{table}

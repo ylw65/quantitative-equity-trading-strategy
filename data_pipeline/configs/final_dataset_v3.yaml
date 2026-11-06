@@ -1,0 +1,31 @@
+project:
+  name: adtv100m_2023_eligibility_v3
+  parent_version: adtv100m_2023_eligibility_v2
+  decision_date: "2026-10-29"
+
+inputs:
+  parent_root: data/filtered/adtv100m_2023_eligibility_v2
+  identity_audit_root: data/investigation/security_identity_audit_488
+  identity_audit_summary: data/investigation/security_identity_audit_488/identity_audit_summary.json
+  security_identity_audit: data/investigation/security_identity_audit_488/security_identity_audit_488.csv
+  download_manifest: data/metadata/download_manifest.csv
+
+outputs:
+  root: data/filtered/adtv100m_2023_eligibility_v3
+
+exclusions:
+  security_ids:
+    - SEC:0000009984
+  reason: Verified Yahoo ticker B checkpoint contains Barrick Mining, not the intended Barnes Group security.
+  policy_type: verified_identity_contamination
+  source_reference: data/investigation/security_identity_audit_488/identity_audit_summary.json
+
+research_constraints:
+  modify_parent_v2: false
+  modify_raw_data: false
+  reassign_market_data: false
+  calculate_final_returns: false
+  strategy_features: false
+  chronological_split: false
+  model_training: false
+  backtesting: false

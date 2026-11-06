@@ -1,0 +1,851 @@
+{
+  "generated_at_utc": "2026-10-26T12:12:30+00:00",
+  "scope": {
+    "observation_start": "2016-01-04",
+    "observation_end": "2025-12-31",
+    "primary_provider": "Yahoo Finance via yfinance",
+    "secondary_sample_provider": "EODHD public demo",
+    "full_historical_coverage_established": false
+  },
+  "universe": {
+    "audit_rows": 9047,
+    "included_securities": 4874,
+    "excluded_audit_rows": 4173,
+    "issue_groups": 6554,
+    "current_ticker_match": 3113,
+    "no_current_ticker_match": 1761,
+    "recorded_ticker_changes": 391,
+    "reit_common_stock": 10,
+    "ordinary_shares": 123,
+    "common_equity_class": 986,
+    "adr_rows": 293,
+    "fund_rows": 18,
+    "preferred_rows": 345,
+    "exchange_counts": {
+      "NYSE": 1729,
+      "NYSE American": 107,
+      "Nasdaq": 3038
+    },
+    "type_counts": {
+      "common_equity_class": 986,
+      "common_stock": 3755,
+      "ordinary_shares": 123,
+      "reit_common_stock": 10
+    },
+    "issue_severity_counts": {
+      "medium": 2335,
+      "high": 2290,
+      "info": 1929
+    },
+    "issue_type_counts": {
+      "no_cover_tags": 1987,
+      "subsequent_ticker_change": 1929,
+      "invalid_ticker": 1270,
+      "ticker_reuse_or_collision": 557,
+      "ambiguous_security_type": 332,
+      "missing_ticker": 317,
+      "duplicate_security_resolved": 108,
+      "duplicate_cover_security": 54
+    }
+  },
+  "acquisition": {
+    "yahoo_attempted": 4874,
+    "yahoo_success": 3239,
+    "yahoo_failed": 1635,
+    "yahoo_partial": 0,
+    "demo_selected": 40,
+    "demo_success": 3,
+    "demo_failed": 37,
+    "demo_success_tickers": [
+      "AAPL",
+      "MSFT",
+      "TSLA"
+    ],
+    "secondary_role": "secondary_sample_only"
+  },
+  "data": {
+    "securities": 3239,
+    "universe_without_observations": 1635,
+    "observations": 7086540,
+    "valid_sessions_per_security_min": 7,
+    "valid_sessions_per_security_max": 2514,
+    "expected_sessions": 7128166,
+    "missing_adj_close": 41618,
+    "missing_volume": 41617,
+    "nonpositive_adj_close": 4,
+    "negative_volume": 0,
+    "zero_volume": 138694,
+    "row_missing_adj_rate": 0.005838535004414886,
+    "row_missing_volume_rate": 0.005954244300138437,
+    "unobserved_sessions": 4,
+    "price_min": 9.999999747378752e-07,
+    "price_median": 26.579999923706055,
+    "price_max": 17261887051093.332,
+    "volume_min": 1.0,
+    "volume_median": 309700.0,
+    "volume_max": 3692928000.0,
+    "split_events": 1313,
+    "dividend_events": 52382,
+    "split_continuity_flags": 0,
+    "dividend_continuity_flags": 31,
+    "extreme_return_rows": 5409,
+    "extreme_volume_spike_rows": 33544,
+    "raw_adjusted_conflict_rows": 21,
+    "diagnostic_min": -0.9999900000004016,
+    "diagnostic_max": 24999.001004082176
+  },
+  "auditability": {
+    "unique_security_ids": 4874,
+    "unique_tickers": 4874,
+    "missing_security_ids": 0,
+    "missing_tickers": 0,
+    "duplicate_base_keys": 0,
+    "pct_return_all_null": true,
+    "diagnostic_non_null": 7083298
+  },
+  "issues": {
+    "total_groups": 23,
+    "severity_counts": {
+      "high": 3976,
+      "info": 2011,
+      "low": 2858,
+      "medium": 3327
+    },
+    "data_issue_groups": 5618
+  },
+  "tables": {
+    "universe_by_exchange": [
+      {
+        "exchange": "NYSE",
+        "securities": 1729,
+        "audit_rows": 3941
+      },
+      {
+        "exchange": "NYSE American",
+        "securities": 107,
+        "audit_rows": 161
+      },
+      {
+        "exchange": "Nasdaq",
+        "securities": 3038,
+        "audit_rows": 4613
+      }
+    ],
+    "universe_by_type": [
+      {
+        "security_type": "common_equity_class",
+        "securities": 986
+      },
+      {
+        "security_type": "common_stock",
+        "securities": 3755
+      },
+      {
+        "security_type": "ordinary_shares",
+        "securities": 123
+      },
+      {
+        "security_type": "reit_common_stock",
+        "securities": 10
+      }
+    ],
+    "coverage_by_year": [
+      {
+        "year": 2016,
+        "securities_with_observations": 2340,
+        "securities_with_valid_adj_close": 2305,
+        "securities_with_valid_volume": 2291,
+        "observations": 578938,
+        "valid_adj_close_sessions": 569765,
+        "missing_adj_close_observations": 9173,
+        "missing_volume_observations": 9173,
+        "extreme_return_rows": 213,
+        "raw_adjusted_return_conflict_rows": 0,
+        "extreme_volume_spike_rows": 2387,
+        "split_events": 100,
+        "dividend_events": 4765,
+        "expected_sessions_in_observed_intervals": 578938,
+        "unobserved_sessions_within_security_intervals": 0,
+        "row_missing_adj_close_rate": 0.0158445291205621,
+        "row_missing_volume_rate": 0.0158445291205621,
+        "calendar_missing_rate_observed_intervals": 0.0,
+        "active_with_data": 2305,
+        "unknown_or_unavailable": 2569
+      },
+      {
+        "year": 2017,
+        "securities_with_observations": 2439,
+        "securities_with_valid_adj_close": 2406,
+        "securities_with_valid_volume": 2396,
+        "observations": 600180,
+        "valid_adj_close_sessions": 591524,
+        "missing_adj_close_observations": 8656,
+        "missing_volume_observations": 8656,
+        "extreme_return_rows": 272,
+        "raw_adjusted_return_conflict_rows": 0,
+        "extreme_volume_spike_rows": 2396,
+        "split_events": 99,
+        "dividend_events": 4905,
+        "expected_sessions_in_observed_intervals": 600180,
+        "unobserved_sessions_within_security_intervals": 0,
+        "row_missing_adj_close_rate": 0.0144223399646772,
+        "row_missing_volume_rate": 0.0144223399646772,
+        "calendar_missing_rate_observed_intervals": 0.0,
+        "active_with_data": 2406,
+        "unknown_or_unavailable": 2468
+      },
+      {
+        "year": 2018,
+        "securities_with_observations": 2563,
+        "securities_with_valid_adj_close": 2535,
+        "securities_with_valid_volume": 2526,
+        "observations": 629594,
+        "valid_adj_close_sessions": 622078,
+        "missing_adj_close_observations": 7516,
+        "missing_volume_observations": 7516,
+        "extreme_return_rows": 298,
+        "raw_adjusted_return_conflict_rows": 0,
+        "extreme_volume_spike_rows": 2819,
+        "split_events": 91,
+        "dividend_events": 5067,
+        "expected_sessions_in_observed_intervals": 629594,
+        "unobserved_sessions_within_security_intervals": 0,
+        "row_missing_adj_close_rate": 0.0119378520125668,
+        "row_missing_volume_rate": 0.0119378520125668,
+        "calendar_missing_rate_observed_intervals": 0.0,
+        "active_with_data": 2535,
+        "unknown_or_unavailable": 2339
+      },
+      {
+        "year": 2019,
+        "securities_with_observations": 2669,
+        "securities_with_valid_adj_close": 2643,
+        "securities_with_valid_volume": 2635,
+        "observations": 659093,
+        "valid_adj_close_sessions": 652394,
+        "missing_adj_close_observations": 6699,
+        "missing_volume_observations": 6699,
+        "extreme_return_rows": 297,
+        "raw_adjusted_return_conflict_rows": 0,
+        "extreme_volume_spike_rows": 3200,
+        "split_events": 104,
+        "dividend_events": 5221,
+        "expected_sessions_in_observed_intervals": 659093,
+        "unobserved_sessions_within_security_intervals": 0,
+        "row_missing_adj_close_rate": 0.0101639677556884,
+        "row_missing_volume_rate": 0.0101639677556884,
+        "calendar_missing_rate_observed_intervals": 0.0,
+        "active_with_data": 2643,
+        "unknown_or_unavailable": 2231
+      },
+      {
+        "year": 2020,
+        "securities_with_observations": 2850,
+        "securities_with_valid_adj_close": 2834,
+        "securities_with_valid_volume": 2828,
+        "observations": 691159,
+        "valid_adj_close_sessions": 685491,
+        "missing_adj_close_observations": 5668,
+        "missing_volume_observations": 5668,
+        "extreme_return_rows": 628,
+        "raw_adjusted_return_conflict_rows": 2,
+        "extreme_volume_spike_rows": 3745,
+        "split_events": 98,
+        "dividend_events": 4854,
+        "expected_sessions_in_observed_intervals": 691159,
+        "unobserved_sessions_within_security_intervals": 0,
+        "row_missing_adj_close_rate": 0.0082007179245296,
+        "row_missing_volume_rate": 0.0082007179245296,
+        "calendar_missing_rate_observed_intervals": 0.0,
+        "active_with_data": 2834,
+        "unknown_or_unavailable": 2040
+      },
+      {
+        "year": 2021,
+        "securities_with_observations": 3127,
+        "securities_with_valid_adj_close": 3123,
+        "securities_with_valid_volume": 3115,
+        "observations": 754395,
+        "valid_adj_close_sessions": 751811,
+        "missing_adj_close_observations": 2584,
+        "missing_volume_observations": 2584,
+        "extreme_return_rows": 346,
+        "raw_adjusted_return_conflict_rows": 3,
+        "extreme_volume_spike_rows": 3423,
+        "split_events": 77,
+        "dividend_events": 5150,
+        "expected_sessions_in_observed_intervals": 754395,
+        "unobserved_sessions_within_security_intervals": 0,
+        "row_missing_adj_close_rate": 0.003425261302103,
+        "row_missing_volume_rate": 0.003425261302103,
+        "calendar_missing_rate_observed_intervals": 0.0,
+        "active_with_data": 3123,
+        "unknown_or_unavailable": 1751
+      },
+      {
+        "year": 2022,
+        "securities_with_observations": 3204,
+        "securities_with_valid_adj_close": 3203,
+        "securities_with_valid_volume": 3198,
+        "observations": 796507,
+        "valid_adj_close_sessions": 795870,
+        "missing_adj_close_observations": 637,
+        "missing_volume_observations": 637,
+        "extreme_return_rows": 282,
+        "raw_adjusted_return_conflict_rows": 3,
+        "extreme_volume_spike_rows": 3299,
+        "split_events": 116,
+        "dividend_events": 5523,
+        "expected_sessions_in_observed_intervals": 796507,
+        "unobserved_sessions_within_security_intervals": 0,
+        "row_missing_adj_close_rate": 0.0007997418729527,
+        "row_missing_volume_rate": 0.0007997418729527,
+        "calendar_missing_rate_observed_intervals": 0.0,
+        "active_with_data": 3203,
+        "unknown_or_unavailable": 1671
+      },
+      {
+        "year": 2023,
+        "securities_with_observations": 3210,
+        "securities_with_valid_adj_close": 3209,
+        "securities_with_valid_volume": 3206,
+        "observations": 802046,
+        "valid_adj_close_sessions": 801796,
+        "missing_adj_close_observations": 250,
+        "missing_volume_observations": 250,
+        "extreme_return_rows": 433,
+        "raw_adjusted_return_conflict_rows": 0,
+        "extreme_volume_spike_rows": 3860,
+        "split_events": 198,
+        "dividend_events": 5618,
+        "expected_sessions_in_observed_intervals": 802048,
+        "unobserved_sessions_within_security_intervals": 2,
+        "row_missing_adj_close_rate": 0.0003117028200377,
+        "row_missing_volume_rate": 0.0003117028200377,
+        "calendar_missing_rate_observed_intervals": 2.49361634216406e-06,
+        "active_with_data": 3209,
+        "unknown_or_unavailable": 1665
+      },
+      {
+        "year": 2024,
+        "securities_with_observations": 3215,
+        "securities_with_valid_adj_close": 3214,
+        "securities_with_valid_volume": 3214,
+        "observations": 809386,
+        "valid_adj_close_sessions": 809134,
+        "missing_adj_close_observations": 252,
+        "missing_volume_observations": 252,
+        "extreme_return_rows": 1080,
+        "raw_adjusted_return_conflict_rows": 2,
+        "extreme_volume_spike_rows": 4140,
+        "split_events": 225,
+        "dividend_events": 5623,
+        "expected_sessions_in_observed_intervals": 809387,
+        "unobserved_sessions_within_security_intervals": 1,
+        "row_missing_adj_close_rate": 0.0003113471199155,
+        "row_missing_volume_rate": 0.0003113471199155,
+        "calendar_missing_rate_observed_intervals": 1.23550291764014e-06,
+        "active_with_data": 3214,
+        "unknown_or_unavailable": 1660
+      },
+      {
+        "year": 2025,
+        "securities_with_observations": 3239,
+        "securities_with_valid_adj_close": 3239,
+        "securities_with_valid_volume": 3239,
+        "observations": 806864,
+        "valid_adj_close_sessions": 806677,
+        "missing_adj_close_observations": 183,
+        "missing_volume_observations": 182,
+        "extreme_return_rows": 1560,
+        "raw_adjusted_return_conflict_rows": 11,
+        "extreme_volume_spike_rows": 4275,
+        "split_events": 205,
+        "dividend_events": 5656,
+        "expected_sessions_in_observed_intervals": 806865,
+        "unobserved_sessions_within_security_intervals": 1,
+        "row_missing_adj_close_rate": 0.0002268040214955,
+        "row_missing_volume_rate": 0.0002255646552578,
+        "calendar_missing_rate_observed_intervals": 1.2393647016539322e-06,
+        "active_with_data": 3239,
+        "unknown_or_unavailable": 1635
+      }
+    ],
+    "corporate_actions_by_year": [
+      {
+        "year": 2016,
+        "observations": 569765,
+        "split_events": 100,
+        "dividend_events": 4765
+      },
+      {
+        "year": 2017,
+        "observations": 591524,
+        "split_events": 99,
+        "dividend_events": 4905
+      },
+      {
+        "year": 2018,
+        "observations": 622078,
+        "split_events": 91,
+        "dividend_events": 5067
+      },
+      {
+        "year": 2019,
+        "observations": 652394,
+        "split_events": 104,
+        "dividend_events": 5221
+      },
+      {
+        "year": 2020,
+        "observations": 685491,
+        "split_events": 98,
+        "dividend_events": 4854
+      },
+      {
+        "year": 2021,
+        "observations": 751811,
+        "split_events": 77,
+        "dividend_events": 5150
+      },
+      {
+        "year": 2022,
+        "observations": 795870,
+        "split_events": 116,
+        "dividend_events": 5523
+      },
+      {
+        "year": 2023,
+        "observations": 801796,
+        "split_events": 198,
+        "dividend_events": 5618
+      },
+      {
+        "year": 2024,
+        "observations": 809134,
+        "split_events": 225,
+        "dividend_events": 5623
+      },
+      {
+        "year": 2025,
+        "observations": 806677,
+        "split_events": 205,
+        "dividend_events": 5656
+      }
+    ],
+    "split_audit": [
+      {
+        "ticker": "SHEN",
+        "event_date": "2016-01-05",
+        "split_factor": 2.0,
+        "adjusted_return": -0.0009690120061497387,
+        "raw_diagnostic_return": -0.0009689220448847458,
+        "implied_factor": 0.9999999099514851,
+        "relative_error": 9.00485148669361e-08,
+        "volume_ratio": 0.4799107142857143,
+        "status": "pass"
+      },
+      {
+        "ticker": "DHR",
+        "event_date": "2016-07-05",
+        "split_factor": 1.319,
+        "adjusted_return": 0.22227734560831358,
+        "raw_diagnostic_return": -0.2142298262135537,
+        "implied_factor": 1.5555150683799046,
+        "relative_error": 0.5555150683799046,
+        "volume_ratio": 3.7511628332066564,
+        "status": "review"
+      },
+      {
+        "ticker": "RILY",
+        "event_date": "2016-11-25",
+        "split_factor": 1.01,
+        "adjusted_return": 0.025182195540053298,
+        "raw_diagnostic_return": 0.00999999548053454,
+        "implied_factor": 1.0150318813143118,
+        "relative_error": 0.015031881314311768,
+        "volume_ratio": 0.26952695269526955,
+        "status": "pass"
+      },
+      {
+        "ticker": "CFBK",
+        "event_date": "2018-08-21",
+        "split_factor": 0.181,
+        "adjusted_return": -0.017030663611656394,
+        "raw_diagnostic_return": -0.017030798109573086,
+        "implied_factor": 1.0000001368282103,
+        "relative_error": 1.3682821031757442e-07,
+        "volume_ratio": 0.5976338577875351,
+        "status": "pass"
+      },
+      {
+        "ticker": "CMCT",
+        "event_date": "2019-09-03",
+        "split_factor": 0.3333333333333333,
+        "adjusted_return": -0.08777778782666668,
+        "raw_diagnostic_return": -0.726333344489583,
+        "implied_factor": 3.3333334324999995,
+        "relative_error": 2.3333334324999995,
+        "volume_ratio": 0.85,
+        "status": "review"
+      },
+      {
+        "ticker": "CTO",
+        "event_date": "2020-11-18",
+        "split_factor": 1.228,
+        "adjusted_return": 0.008777153054214448,
+        "raw_diagnostic_return": -0.019243610296184266,
+        "implied_factor": 1.0285705641528995,
+        "relative_error": 0.02857056415289949,
+        "volume_ratio": 0.7176145146387028,
+        "status": "pass"
+      },
+      {
+        "ticker": "MRK",
+        "event_date": "2021-06-03",
+        "split_factor": 1.048,
+        "adjusted_return": 0.020926280114694773,
+        "raw_diagnostic_return": 0.020926419559905485,
+        "implied_factor": 0.9999998634130648,
+        "relative_error": 1.3658693520657295e-07,
+        "volume_ratio": 1.3502779648420902,
+        "status": "pass"
+      },
+      {
+        "ticker": "FWONA",
+        "event_date": "2023-07-20",
+        "split_factor": 1.018,
+        "adjusted_return": -0.010688944349234397,
+        "raw_diagnostic_return": -0.010688944349234397,
+        "implied_factor": 0.9999999999999999,
+        "relative_error": 1.1102230246251565e-16,
+        "volume_ratio": 2.7555483201041904,
+        "status": "pass"
+      },
+      {
+        "ticker": "CZFS",
+        "event_date": "2024-06-14",
+        "split_factor": 1.01,
+        "adjusted_return": 0.0024239906750354034,
+        "raw_diagnostic_return": -0.008950611747257309,
+        "implied_factor": 1.0114773315609895,
+        "relative_error": 0.011477331560989512,
+        "volume_ratio": 0.8824795523030564,
+        "status": "pass"
+      },
+      {
+        "ticker": "BBGI",
+        "event_date": "2024-09-24",
+        "split_factor": 0.05,
+        "adjusted_return": 0.05520830332405158,
+        "raw_diagnostic_return": 0.05520830332405158,
+        "implied_factor": 1.0,
+        "relative_error": 0.0,
+        "volume_ratio": 1.1125374411638853,
+        "status": "pass"
+      },
+      {
+        "ticker": "CRESY",
+        "event_date": "2025-11-28",
+        "split_factor": 1.025,
+        "adjusted_return": 0.04959914404409793,
+        "raw_diagnostic_return": -0.005024385409572951,
+        "implied_factor": 1.0548993650222835,
+        "relative_error": 0.05489936502228354,
+        "volume_ratio": 0.9862099148347392,
+        "status": "review"
+      },
+      {
+        "ticker": "RPT",
+        "event_date": "2025-12-31",
+        "split_factor": 0.16666666666666666,
+        "adjusted_return": 0.01221008016357139,
+        "raw_diagnostic_return": 0.012210059413097829,
+        "implied_factor": 1.0000000205001653,
+        "relative_error": 2.0500165343051435e-08,
+        "volume_ratio": 1.1791197543500511,
+        "status": "pass"
+      }
+    ],
+    "dividend_audit": [
+      {
+        "ticker": "ABM",
+        "event_date": "2016-01-05",
+        "cash_dividend": 0.165,
+        "adjusted_return": 0.002362939307587686,
+        "raw_total_return": 0.0023491007716316403,
+        "absolute_return_error": 1.3838535956045561e-05,
+        "status": "pass",
+        "year": 2016.0
+      },
+      {
+        "ticker": "ACU",
+        "event_date": "2016-01-05",
+        "cash_dividend": 0.1,
+        "adjusted_return": 0.008168148673536768,
+        "raw_total_return": 0.008120702864618634,
+        "absolute_return_error": 4.744580891813399e-05,
+        "status": "pass",
+        "year": 2016.0
+      },
+      {
+        "ticker": "DHR",
+        "event_date": "2016-07-05",
+        "cash_dividend": 24.56,
+        "adjusted_return": 0.22227734560831358,
+        "raw_total_return": 0.05652546419652782,
+        "absolute_return_error": 0.16575188141178576,
+        "status": "review",
+        "year": NaN
+      },
+      {
+        "ticker": "ABM",
+        "event_date": "2017-01-03",
+        "cash_dividend": 0.17,
+        "adjusted_return": 0.0031966262896352404,
+        "raw_total_return": 0.0031831313415022766,
+        "absolute_return_error": 1.3494948132963813e-05,
+        "status": "pass",
+        "year": 2017.0
+      },
+      {
+        "ticker": "BRX",
+        "event_date": "2017-01-03",
+        "cash_dividend": 0.26,
+        "adjusted_return": 0.014073405245449422,
+        "raw_total_return": 0.013923010755275023,
+        "absolute_return_error": 0.0001503944901743992,
+        "status": "pass",
+        "year": 2017.0
+      },
+      {
+        "ticker": "APLE",
+        "event_date": "2018-01-02",
+        "cash_dividend": 0.1,
+        "adjusted_return": 0.004612843738934336,
+        "raw_total_return": 0.004589483340997846,
+        "absolute_return_error": 2.3360397936489363e-05,
+        "status": "pass",
+        "year": 2018.0
+      },
+      {
+        "ticker": "CMCSA",
+        "event_date": "2018-01-02",
+        "cash_dividend": 0.148079,
+        "adjusted_return": 0.02952953977101691,
+        "raw_total_return": 0.029413252469990603,
+        "absolute_return_error": 0.00011628730102630769,
+        "status": "pass",
+        "year": 2018.0
+      },
+      {
+        "ticker": "KDP",
+        "event_date": "2018-07-10",
+        "cash_dividend": 103.75,
+        "adjusted_return": 0.11451491027881877,
+        "raw_total_return": 0.018437625783823686,
+        "absolute_return_error": 0.09607728449499509,
+        "status": "review",
+        "year": NaN
+      },
+      {
+        "ticker": "PPSI",
+        "event_date": "2019-10-08",
+        "cash_dividend": 1.37,
+        "adjusted_return": 0.2900303191111404,
+        "raw_total_return": 0.2051282452565144,
+        "absolute_return_error": 0.084902073854626,
+        "status": "review",
+        "year": NaN
+      },
+      {
+        "ticker": "TRTX",
+        "event_date": "2020-03-26",
+        "cash_dividend": 0.43,
+        "adjusted_return": 0.9295298714004205,
+        "raw_total_return": 0.8123166699259861,
+        "absolute_return_error": 0.11721320147443448,
+        "status": "review",
+        "year": NaN
+      },
+      {
+        "ticker": "VHC",
+        "event_date": "2023-04-18",
+        "cash_dividend": 20.0,
+        "adjusted_return": 0.21153854265721184,
+        "raw_total_return": 0.0723684470574284,
+        "absolute_return_error": 0.13917009559978344,
+        "status": "review",
+        "year": NaN
+      },
+      {
+        "ticker": "RBCN",
+        "event_date": "2023-10-24",
+        "cash_dividend": 1.1,
+        "adjusted_return": 0.13636369383368252,
+        "raw_total_return": 0.051136369332055454,
+        "absolute_return_error": 0.08522732450162707,
+        "status": "review",
+        "year": NaN
+      }
+    ],
+    "volume_flags": [
+      {
+        "flag": "missing volume",
+        "observations": 41617
+      },
+      {
+        "flag": "negative volume",
+        "observations": 0
+      },
+      {
+        "flag": "zero volume",
+        "observations": 138694
+      },
+      {
+        "flag": "extreme volume spike",
+        "observations": 33544
+      }
+    ],
+    "issue_summary": [
+      {
+        "scope": "universe",
+        "severity": "high",
+        "issue_type": "invalid_ticker",
+        "count": 1270
+      },
+      {
+        "scope": "universe",
+        "severity": "high",
+        "issue_type": "missing_ticker",
+        "count": 317
+      },
+      {
+        "scope": "universe",
+        "severity": "high",
+        "issue_type": "no_cover_tags",
+        "count": 146
+      },
+      {
+        "scope": "universe",
+        "severity": "high",
+        "issue_type": "ticker_reuse_or_collision",
+        "count": 557
+      },
+      {
+        "scope": "universe",
+        "severity": "info",
+        "issue_type": "subsequent_ticker_change",
+        "count": 1929
+      },
+      {
+        "scope": "universe",
+        "severity": "medium",
+        "issue_type": "ambiguous_security_type",
+        "count": 332
+      },
+      {
+        "scope": "universe",
+        "severity": "medium",
+        "issue_type": "duplicate_cover_security",
+        "count": 54
+      },
+      {
+        "scope": "universe",
+        "severity": "medium",
+        "issue_type": "duplicate_security_resolved",
+        "count": 108
+      },
+      {
+        "scope": "universe",
+        "severity": "medium",
+        "issue_type": "no_cover_tags",
+        "count": 1841
+      },
+      {
+        "scope": "validated",
+        "severity": "high",
+        "issue_type": "download_unavailable",
+        "count": 1635
+      },
+      {
+        "scope": "validated",
+        "severity": "high",
+        "issue_type": "missing_adj_close",
+        "count": 37
+      },
+      {
+        "scope": "validated",
+        "severity": "high",
+        "issue_type": "nonpositive_adj_close",
+        "count": 1
+      },
+      {
+        "scope": "validated",
+        "severity": "high",
+        "issue_type": "ohlc_consistency",
+        "count": 13
+      },
+      {
+        "scope": "validated",
+        "severity": "info",
+        "issue_type": "simultaneous_split_and_distribution",
+        "count": 16
+      },
+      {
+        "scope": "validated",
+        "severity": "info",
+        "issue_type": "split_volume_level_change_observed",
+        "count": 66
+      },
+      {
+        "scope": "validated",
+        "severity": "low",
+        "issue_type": "extreme_diagnostic_volume_spike",
+        "count": 2077
+      },
+      {
+        "scope": "validated",
+        "severity": "low",
+        "issue_type": "zero_volume",
+        "count": 781
+      },
+      {
+        "scope": "validated",
+        "severity": "medium",
+        "issue_type": "dividend_adjustment_continuity",
+        "count": 27
+      },
+      {
+        "scope": "validated",
+        "severity": "medium",
+        "issue_type": "extreme_diagnostic_return",
+        "count": 922
+      },
+      {
+        "scope": "validated",
+        "severity": "medium",
+        "issue_type": "missing_adj_close",
+        "count": 1
+      },
+      {
+        "scope": "validated",
+        "severity": "medium",
+        "issue_type": "missing_volume",
+        "count": 37
+      },
+      {
+        "scope": "validated",
+        "severity": "medium",
+        "issue_type": "raw_adjusted_return_conflict",
+        "count": 2
+      },
+      {
+        "scope": "validated",
+        "severity": "medium",
+        "issue_type": "unobserved_sessions_inside_history",
+        "count": 3
+      }
+    ]
+  }
+}

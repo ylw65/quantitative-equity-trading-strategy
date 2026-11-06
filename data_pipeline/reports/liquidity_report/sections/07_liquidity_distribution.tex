@@ -1,0 +1,36 @@
+\section{Liquidity Distribution and Selection Results}
+
+The \SelectedSecurities{} selected ADTV20 values run from
+\SelectedADTVMinimum{} to \SelectedADTVMaximum{}. The median is
+\SelectedADTVMedian{}. The distribution is strongly right-skewed and contains a
+small number of exceptionally large dollar-volume observations at the upper
+tail.
+
+\begin{table}[tbp]
+\centering
+\caption{ADTV20 distribution for complete valid windows}
+\label{tab:adtv-quantiles}
+\GeneratedTable{table_adtv_quantiles}
+\end{table}
+
+\GeneratedFigure{liquidity_adtv20_ecdf.pdf}{Empirical cumulative distribution
+of complete-window ADTV20 on a logarithmic scale. The dashed line is the
+inclusive USD 100 million threshold.}{fig:adtv-ecdf}
+
+\clearpage
+
+The empirical cumulative distribution in
+Figure~\ref{fig:adtv-ecdf} locates the threshold in the lower tail of the
+complete-window distribution. The near-binding minimum validates that the
+inclusive comparison is being applied exactly.
+
+Table~\ref{tab:sensitivity} reports non-binding sensitivity counts. These are
+descriptive counts only; no alternative filtered dataset is produced and the
+binding threshold is not lowered after observing the result.
+
+\begin{table}[tbp]
+\centering
+\caption{Non-binding ADTV20 sensitivity counts}
+\label{tab:sensitivity}
+\GeneratedTable{table_sensitivity}
+\end{table}

@@ -1,0 +1,4 @@
+
+The primary Yahoo implementation attempted all \YahooAttempted{} securities in the verified master and obtained \YahooSuccess{} successful histories. The remaining \YahooFailed{} requests returned no usable observations, generally because the historical symbol was absent or the provider reported a possibly delisted security. Request parameters, timestamps, package versions, and each failure are retained in the acquisition metadata. Empty all-NaN date grids were quarantined rather than recorded as observations.
+
+As a secondary cross-check, \DemoSelected{} securities were requested from the EODHD public-demo service; \DemoSuccess{} succeeded and \DemoFailed{} returned HTTP 403. The main validated results and quality conclusions in this report use Yahoo data, not that restricted secondary sample.

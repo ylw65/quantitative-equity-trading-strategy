@@ -1,0 +1,44 @@
+\section{Missing-Data Assessment}
+
+\subsection{Vendor reconciliation}
+
+The selected raw archive contains \RawSelectedRows{} rows. Exactly
+\PlaceholderRows{} are all-NaN open-high-low-close placeholder rows and are
+not represented in the validated base. This leaves \SelectedObservations{}
+validated rows. The placeholders account simultaneously for the raw missing
+adjusted-close rows, raw missing-volume rows, and the raw-to-base difference.
+
+The missing rows are concentrated in ABNB and AFRM. The intervals precede
+their first positive-price observations and are consistent with the vendor
+emitting placeholder calendar rows before listing. Because the master does not
+contain independently verified listing dates for these securities, the audit
+labels the interval class cautiously; it does not convert observed first-trade
+dates into certified legal listing dates.
+
+\begin{table}[tbp]
+\centering
+\caption{Missing-value intervals in the filtered raw archive}
+\label{tab:missing-intervals}
+\GeneratedTable{table_missing_intervals}
+\end{table}
+
+\subsection{History and calendar coverage}
+
+\IncompleteHistorySecurities{} selected securities begin after the first 2016
+session and therefore have leading calendar dates with no research-base
+observation. Their first observed dates are concentrated in later IPOs and
+spin-offs, but structural absence before listing cannot be certified from the
+master alone. No selected security has a trailing incomplete interval: all end
+with a valid 2025 observation.
+
+\noindent\begin{minipage}{\linewidth}
+Within each security's observed endpoint range, the count of unexpected
+internal missing XNYS sessions is \InternalCalendarGaps{}. This is not a claim
+that every security traded on every session. It means there is no missing
+exchange-session gap between the first and last observed valid rows after
+applying the existing base contract.
+\end{minipage}
+
+\GeneratedFigure{liquidity_quality_by_year.pdf}{Selected-cohort missing
+adjusted-close rows and genuine zero-volume rows by calendar year. The two
+series are row counts on the same axis.}{fig:quality-year}

@@ -1,0 +1,49 @@
+\section{Extreme-Value Investigation}
+
+\subsection{Trading volume}
+
+The existing definition compares reported share volume with 20 times the
+median of the preceding 20 observations after at least five history
+observations. Recalculation within the retained history segments yields
+\FinalExtremeVolumeRows{} extreme-volume observations across
+\FinalExtremeVolumeSecurities{} securities and \FinalExtremeVolumeEpisodes{}
+strict episodes. Maximum reported share volume is
+\FinalExtremeVolumeMaxShares{} shares. Maximum reconstructed daily dollar
+volume is USD \FinalExtremeVolumeMaxDollar{}.
+
+The total is not obtained by subtracting FERG and DKNG flags from the prior
+count: truncating their histories changes the available rolling-history
+baseline, so diagnostics are recomputed within each retained segment.
+Extreme-volume observations remain in the dataset.
+
+\subsection{Adjusted prices and returns}
+
+No retained security has a nonpositive adjusted Close or an existing
+extreme-price-level case record, so the final extreme-price observation count is
+zero. The diagnostic return is
+\(r_t=\mathrm{AdjClose}_t/\mathrm{AdjClose}_{t-1}-1\), flagged only when
+\(|r_t|>0.50\). The final panel contains \FinalExtremeReturnRows{}
+extreme-return observations across \FinalExtremeReturnSecurities{} securities:
+\FinalExtremeReturnPositive{} positive and \FinalExtremeReturnNegative{}
+negative. They form \FinalExtremeReturnEpisodes{} strict episodes.
+
+\begin{table}[H]
+\centering
+\caption{Recomputed extreme-value summary}
+\label{tab:extreme-summary}
+\GeneratedTable{table_extreme_summary}
+\end{table}
+
+\GeneratedFigure{quality_rate_comparison.pdf}{Zero-volume, extreme-volume, and
+extreme-return event rates per 100,000 observations across the acquired,
+original liquidity-filtered, and final v2 scopes.}{fig:quality-rates}
+
+\subsection{Evidence interpretation}
+
+Existing evidence classifies \RetainedExtremeMarketMoves{} retained extreme
+returns as market moves and \SameDayDividendAdjustmentCases{} as a same-day
+dividend adjustment. \CorporateActionExtremeReturns{} extreme return is
+corporate-action related. \OverlappingVolumeReturnEpisodes{} strict episodes
+contain both extreme-volume and
+extreme-return flags. No retained extreme-return discontinuity is classified as
+unresolved.

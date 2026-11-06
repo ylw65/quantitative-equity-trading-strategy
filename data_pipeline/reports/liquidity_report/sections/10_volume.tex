@@ -1,0 +1,20 @@
+\section{Trading-Volume Quality Assessment}
+
+The selected panel has \ZeroVolumeRows{} genuine zero-volume rows across
+\ZeroVolumeSecurities{} securities. A positive closing price with reported zero
+volume remains a valid economic observation and contributes zero to any
+dollar-volume calculation; it is not converted into a missing value. There are
+\ProlongedZeroVolumeSecurities{} prolonged zero-volume histories under the
+existing definition and no selected trailing zero-volume candidate.
+
+The existing diagnostic flags identify \ExtremeVolumeSpikes{} extreme volume
+spikes across \ExtremeVolumeSpikeSecurities{} securities. These flags remain
+vendor-relative diagnostics. They are not winsorized, clipped, removed, or
+turned into ADV or relative-volume features.
+
+The fixed liquidity screen materially changes the observed volume-quality
+burden. Relative to the original acquired panel, zero-volume rows fall from
+138,694 to \ZeroVolumeRows{}, and affected securities fall from 781 to
+\ZeroVolumeSecurities{}. This comparison describes a selected cohort measured
+over its full histories; a high December 2022 ADTV20 does not imply
+continuous liquidity in every earlier or later session.

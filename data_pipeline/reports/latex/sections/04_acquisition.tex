@@ -1,0 +1,56 @@
+\section{Data Sources and Acquisition Methodology}
+
+\subsection{Primary and reference sources}
+
+Daily market observations are requested from Yahoo Finance through
+\texttt{yfinance} \citep{yfinance,yahoofinance} with
+\texttt{auto\_adjust}\allowbreak\texttt{=False} and corporate actions
+enabled. SEC EDGAR filings and reference files support registrant identity,
+exchange, ticker, and historical-eligibility evidence. The official exchange
+calendar is used to separate scheduled non-trading days from unexpected gaps.
+No source is assumed complete or error-free.
+
+\subsection{Batch and retry design}
+
+Requests are processed in configurable batches with per-security checkpoint
+files, bounded retries, and conservative request spacing. A failed request does
+not invalidate its batch. Every attempt is represented in the manifest or
+failure register, including timestamps, parameters, provider/package versions,
+observation counts, and partial-history status.
+
+\subsection{Raw-data preservation}
+
+Raw observations are written before cleaning. Validation does not overwrite the
+raw vendor files. Standardized outputs retain source and acquisition lineage so
+that a validated row can be traced to a specific retrieval event.
+
+\InputGenerated{generated/acquisition_results.tex}
+
+\subsection{Acquisition-provenance reconciliation}
+
+The research-facing dataset is derived exclusively from the Yahoo raw
+directory. Its successful security identifiers are a subset of the successful
+Yahoo manifest entries, and the EODHD public-demo files remain under a separate
+path and provider label. The earlier contradiction arose because the abstract
+was hard-coded while the body and tables were generated from the refreshed
+Yahoo statistics. The abstract now consumes a generated artifact, and a
+machine-readable consistency gate compares report macros with manifest and
+base counts. The verified identity tests cover \IdentityValid{} of
+\YahooSuccess{} checkpoints.
+
+The restricted market-data cross-check uses the EODHD public-demo API
+\citep{eodhd}; its small sample is not a replacement for Yahoo.
+
+\IfFileExists{generated/table_download_status.tex}{
+  \begin{table}[htbp]
+    \centering
+    \caption{Acquisition status for the attempted historical universe.}
+    \label{tab:download_status}
+    \small
+    \input{generated/table_download_status.tex}
+  \end{table}
+}{\PendingResults{generated/table_download_status.tex}}
+
+\FigureGenerated{../figures/download_status.pdf}
+  {Observed successes and failures for the full Yahoo universe attempt and the restricted secondary cross-check.}
+  {fig:download_status}

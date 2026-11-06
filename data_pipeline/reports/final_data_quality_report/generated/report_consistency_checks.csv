@@ -1,0 +1,34 @@
+check,passed,details
+membership_unchanged,True,488 securities
+issuer_count,True,486 issuers
+final_observation_count,True,1186196 rows
+security_date_unique,True,No duplicate security-date keys
+final_return_null,True,pct_return remains null
+ferg_exclusion_count,True,1601
+dkng_exclusion_count,True,189
+only_two_securities_excluded,True,"DKNG,FERG"
+ferg_boundary,True,2022-05-11 excluded / 2022-05-12 retained
+dkng_boundary,True,2020-04-23 excluded / 2020-04-24 retained
+zero_volume_reconciles,True,16 rows
+extreme_volume_reconciles,True,235 rows
+extreme_return_reconciles,True,45 rows
+extreme_price_reconciles,True,0 rows
+summary_final_rows,True,summary and panel agree
+summary_ferg,True,summary and exclusion audit agree
+summary_dkng,True,summary and exclusion audit agree
+statistics_snapshot,True,Report statistics use cleaning-policy snapshot
+macro_FinalSecurities,True,488
+macro_FinalObservations,True,"1,186,196"
+macro_FergExcluded,True,"1,601"
+macro_DkngExcluded,True,189
+macro_FinalZeroVolumeRows,True,16
+macro_FinalExtremeVolumeRows,True,235
+macro_FinalExtremeReturnRows,True,45
+asset_table_eligibility_policy.tex,True,/Users/craig/codes/DSA5205_Proj2/reports/final_data_quality_report/generated/table_eligibility_policy.tex
+asset_table_historical_exclusions.tex,True,/Users/craig/codes/DSA5205_Proj2/reports/final_data_quality_report/generated/table_historical_exclusions.tex
+asset_table_final_years.tex,True,/Users/craig/codes/DSA5205_Proj2/reports/final_data_quality_report/generated/table_final_years.tex
+asset_table_remaining_zero.tex,True,/Users/craig/codes/DSA5205_Proj2/reports/final_data_quality_report/generated/table_remaining_zero.tex
+asset_table_extreme_summary.tex,True,/Users/craig/codes/DSA5205_Proj2/reports/final_data_quality_report/generated/table_extreme_summary.tex
+asset_table_quality_comparison.tex,True,/Users/craig/codes/DSA5205_Proj2/reports/final_data_quality_report/generated/table_quality_comparison.tex
+asset_table_treatments.tex,True,/Users/craig/codes/DSA5205_Proj2/reports/final_data_quality_report/generated/table_treatments.tex
+protected_sources,True,Protected archives are read-only by policy

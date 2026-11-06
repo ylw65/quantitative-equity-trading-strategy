@@ -1,0 +1,18 @@
+\section{Conclusions and Recommendations}
+
+The fixed ADTV20 screen is implemented and reproducible. It selects
+\SelectedSecurities{} securities from \AcquiredSecurities{} acquired
+histories and retains \SelectedObservations{} validated 2016--2025
+observations. The selection is not driven by a missing-session-zero
+assumption, does not use post-2022 volume as an eligibility input, and
+preserves the original raw and validated datasets.
+
+The filtered cohort has a cleaner missingness and zero-volume profile than the
+full acquired set, but it is not error-free. The principal remaining records
+are the two ABNB and AFRM placeholder patterns, one dividend-adjustment
+mismatch, a small number of extreme market movements, and the absence of
+independently verified listing and delisting dates for the full universe.
+
+This cohort is a fixed retrospective reference. A rolling point-in-time
+screen represents a different eligibility design; results from the two
+designs require separate interpretation.

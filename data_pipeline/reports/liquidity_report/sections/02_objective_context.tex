@@ -1,0 +1,19 @@
+\section{Objective and Research Context}
+
+The purpose of this phase is data construction and assessment, not strategy
+research. The deliverable answers four questions: which acquired securities
+pass a fixed January 2023 liquidity rule; what full-history observations remain;
+which data-quality hazards survive the filter; and how those choices affect
+subsequent interpretation.
+
+The eventual research context includes liquid technology stocks and reversal
+strategies, but no technology selection, high-beta screen, volume-to-return
+screen, return feature, model label, train-validation-test split, or backtest
+is introduced here. In particular, the \texttt{pct\_return} column in the
+selected base remains null. Diagnostic returns from the prior audit are used
+only to identify data anomalies.
+
+The analysis follows the existing SEC-derived security master and Yahoo Finance
+research base. The fixed screen is an additional cohort definition layered over
+those inputs. It does not modify raw checkpoints, the original validated base,
+the downloaded histories, or the original issue registers.

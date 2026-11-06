@@ -1,0 +1,32 @@
+\section{Configuration and Reproduction Instructions}
+
+Run commands from the project root after activating the included Python 3.11
+environment:
+
+\begin{verbatim}
+conda activate dsa5205_proj2
+python scripts/build_liquidity_filter.py \
+  --config configs/liquidity_filter.yaml
+python scripts/run_post_filter_anomalies.py \
+  --config configs/liquidity_filter.yaml
+python scripts/run_post_filter_integrity.py \
+  --config configs/liquidity_filter.yaml
+python scripts/build_liquidity_report.py
+python scripts/check_liquidity_report_consistency.py
+cd reports/liquidity_report
+latexmk -pdf -interaction=nonstopmode main.tex
+cd ../..
+python -m pytest -q
+\end{verbatim}
+
+The same sequence is available through:
+
+\begin{verbatim}
+make liquidity
+make test
+\end{verbatim}
+
+The selected daily output does not need another acquisition request. The
+acquisition, universe, validation, and investigation inputs are cited in the
+main historical report and are protected by SHA-256 checks in
+\texttt{filter\_metadata.json} and the post-filter integrity summary.

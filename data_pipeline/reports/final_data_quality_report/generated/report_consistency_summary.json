@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks_total": 33,
+  "checks_passed": 33,
+  "checks_failed": 0,
+  "snapshot": {
+    "securities": 488,
+    "issuers": 486,
+    "observations": 1186196,
+    "diagnostic_rows": 1188706,
+    "ferg_excluded": 1601,
+    "dkng_excluded": 189,
+    "total_excluded": 1790,
+    "zero_volume_rows": 16,
+    "zero_volume_securities": 13,
+    "zero_volume_episodes": 15,
+    "longest_zero_volume_episode": 2,
+    "extreme_volume_rows": 235,
+    "extreme_volume_securities": 118,
+    "extreme_volume_episodes": 179,
+    "extreme_volume_max_share_volume": 1333875000.0,
+    "extreme_volume_max_daily_dollar_volume": 301709179329.87213,
+    "extreme_price_rows": 0,
+    "extreme_price_securities": 0,
+    "extreme_return_rows": 45,
+    "extreme_return_securities": 20,
+    "extreme_return_positive": 36,
+    "extreme_return_negative": 9,
+    "extreme_return_episodes": 41,
+    "overlapping_extreme_volume_return_episodes": 18,
+    "corporate_action_related_extreme_returns": 1,
+    "unresolved_extreme_returns": 0,
+    "remaining_unresolved_quality_cases": {
+      "zero_volume_cause_unverified": 16,
+      "ordinary_dividend_adjustment_mismatch": 1,
+      "ohlc_consistency_open": 1,
+      "identity_review_candidates": 2
+    },
+    "fixed_membership_unchanged": true
+  }
+}

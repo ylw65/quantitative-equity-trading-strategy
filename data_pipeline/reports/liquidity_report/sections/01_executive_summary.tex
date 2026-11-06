@@ -1,0 +1,54 @@
+\section{Executive Summary}
+
+The requested screen is a fixed-cohort selection rule. Eligibility is measured
+once, over \LiquidityWindowStart{} through \LiquidityWindowEnd{}, and then held
+fixed for the entire 2016--2025 panel. Of \AcquiredSecurities{} acquired
+securities, \CompleteWindowSecurities{} have complete and valid 20-session
+windows. \SelectedSecurities{} have
+\(\mathrm{ADTV20}_{2023}\geq\LiquidityThreshold\), while
+\BelowThreshold{} fall below the threshold and \InsufficientWindow{} have
+insufficient window evidence. A further \NotAcquired{} universe members lack a
+usable acquired history and therefore cannot be screened.
+
+The selected panel contains \SelectedObservations{} validated rows and
+\SelectedIssuers{} distinct SEC issuers. Acquired-security retention is
+\AcquiredRetentionPct\%, and observation retention is
+\ObservationRetentionPct\%. The selected ADTV20 values range from
+\SelectedADTVMinimum{} to \SelectedADTVMaximum{}, with a median of
+\SelectedADTVMedian{}. The threshold is inclusive and is approximately binding:
+the selected minimum is only about one percent above USD 100 million.
+
+The post-filter audit does not support an automatic deletion rule. The
+filtered raw archive contains \RawSelectedRows{} rows, of which
+\PlaceholderRows{} are all-NaN vendor placeholders and are absent from the
+validated base. The validated base therefore contains no missing
+adjusted-close or volume rows by construction; those missing fields occur only
+in the raw placeholder rows. It contains \ZeroVolumeRows{} genuine zero-volume
+sessions and \ExtremeReturns{} diagnostic returns exceeding an absolute
+50 percent threshold. No missing value is treated as zero. Zero volume is
+retained as zero because it is a valid reported observation.
+
+No internal exchange-calendar gaps remain among the selected securities.
+There are \IncompleteHistorySecurities{} securities whose observed history does
+not span the full 2016--2025 calendar; the master does not provide verified
+listing and delisting dates for a complete structural classification. Two
+securities, ABNB and AFRM, account for all \PlaceholderRows{} placeholder rows
+and are consistent with pre-listing placeholders, although that label is not an
+independent exchange-listing verification.
+
+All \ExtremeReturns{} extreme diagnostic returns have an interpretation in the
+existing evidence files: \RetainedExtremeMarketMoves{} are retained market
+moves and \SameDayDividendAdjustmentCases{} is a same-day dividend-adjustment
+case. The number of unresolved extreme cases is
+\UnresolvedExtremeCases{}. This finding is an audit result, not a licence to
+remove legitimate market shocks. The selected cohort still contains
+\CorporateActionCaseRecords{} corporate-action case records requiring
+interpretation, two multi-security SEC issuers, and
+\IdentityReviewCandidates{} identity review candidates.
+
+The central limitation is selection bias. Conditioning the training-period
+panel on trading activity observed in late 2022 is retrospective cohort
+selection, and the acquired selected histories end in 2025 for every selected
+security. The panel is suitable for controlled secondary analysis of a
+well-defined, liquid retrospective cohort; it is not a complete point-in-time
+reconstruction of every eligible security in each historical year.

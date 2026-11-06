@@ -1,0 +1,42 @@
+project:
+  name: adtv100m_2023_eligibility_v2
+  calendar: XNYS
+  start_date: "2016-01-01"
+  end_date: "2025-12-31"
+  decision_date: "2026-10-28"
+  extreme_return_abs_threshold: 0.50
+  extreme_volume_ratio_threshold: 20.0
+  extreme_volume_min_history: 5
+  extreme_volume_lookback: 20
+
+inputs:
+  policy: data/metadata/historical_eligibility_policy.csv
+  eligibility_evidence: data/metadata/historical_eligibility_evidence.json
+  original_filter_root: data/filtered/adtv100m_2023
+  original_selected_master: data/filtered/adtv100m_2023/selected_security_master.parquet
+  original_selected_daily: data/filtered/adtv100m_2023/selected_equity_daily.parquet
+  original_quality_dir: data/filtered/adtv100m_2023/quality
+  acquired_base: data/validated/base.parquet
+  standardized_raw: data/validated/standardized_raw.parquet
+  original_diagnostic_returns: data/validated/diagnostic_returns.parquet
+  original_quality_by_security: data/validated/data_quality_by_security.csv
+  original_download_manifest: data/metadata/download_manifest.csv
+  original_universe_master: data/universe/security_master.parquet
+  original_anomaly_dir: data/investigation/anomalies
+  raw_yahoo_dir: data/raw/yahoo
+
+outputs:
+  root: data/filtered/adtv100m_2023_eligibility_v2
+  report_source: reports/final_data_quality_report
+  report_pdf: reports/final_data_quality_report/main.pdf
+  tables: reports/tables/final_quality
+  figures: reports/figures/final_quality
+
+research_constraints:
+  initiate_downloads: false
+  modify_source_data: false
+  calculate_final_returns: false
+  strategy_features: false
+  chronological_split: false
+  model_training: false
+  backtesting: false

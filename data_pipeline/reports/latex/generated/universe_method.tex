@@ -1,0 +1,4 @@
+
+The source layer combines SEC Q4 2022 and Q1 2023 company filing indexes with Section 12(b) cover-page inline-XBRL fields. The SEC filing cohort provides evidence that a registrant and covered security existed around the reference date while retaining issuers that later disappeared or changed symbols. This avoids treating a current symbol directory as the historical universe, although the available public filings do not establish an authoritative exchange census.
+
+The build retains \AuditRows{} cover-row audit records: \IncludedSecurities{} unique verified securities enter the acquisition master and \ExcludedAuditRows{} rows remain excluded with a stated reason. Security identity is anchored to SEC CIK where possible, with the 2023 ticker retained separately. Repeated symbols from subsidiary filings are not allowed to create duplicate mappings; evidence-ranked duplicate resolutions and remaining ambiguity are recorded in \UniverseIssues{} source issue groups.
